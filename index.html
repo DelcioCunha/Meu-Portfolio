@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delcio Cunha — Software Developer | Full Stack & Python</title>
+    <meta name="description" content="Portfólio de Delcio Cunha, Software Developer angolano especializado em Python, FastAPI, Django e desenvolvimento web full stack, com foco em soluções digitais para Angola." />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/components/base.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/sections.css" />
+    <link rel="stylesheet" href="css/components/about.css" />
+    <link rel="stylesheet" href="css/components/skills.css" />
+    <link rel="stylesheet" href="css/components/projects.css" />
+    <link rel="stylesheet" href="css/components/blog.css" />
+    <link rel="stylesheet" href="css/components/experience.css" />
+    <link rel="stylesheet" href="css/components/contact.css" />
+    <link rel="stylesheet" href="css/components/animations.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/featured-projects.css" />
+    <link rel="stylesheet" href="css/components/theme.css" />
+    <link rel="stylesheet" href="css/components/enhancements.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Barra de progresso de scroll -->
+    <div class="scroll-progress-bar"></div>
+
+    <header id="header-placeholder" class="main-header"></header>
+
+    <main>
+        <!-- ====================================================== -->
+        <!-- Secção 1: Hero -->
+        <!-- ====================================================== -->
+        <section id="hero" class="hero-section">
+            <div class="hero-background">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="container hero-container">
+                <div class="profile-card-container animate-on-scroll">
+                    <div class="profile-card glass-card">
+                        <div class="profile-header">
+                            <div class="avatar-wrapper">
+                                <img src="assets/my_image1.jpg" alt="Avatar de Delcio Cunha" class="avatar" />
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="profile-info">
+                                <h2>Delcio Cunha</h2>
+                                <p class="job-title">Software Developer</p>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Maianga, Luanda, Angola</p>
+                            <p><i class="fas fa-graduation-cap"></i> ITEL – Instituto de Telecomunicações</p>
+                            <p><i class="fas fa-circle-check"></i> Disponível para novos projetos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-text-content">
+                    <div class="welcome-badge animate-on-scroll">Bem-vindo ao meu Portfólio</div>
+                    <h1 class="animate-on-scroll">
+                        Construindo<br>
+                        <span class="gradient-text">Soluções Digitais</span>
+                    </h1>
+                    <p style="color: white;" class="animate-on-scroll">Software Developer angolano apaixonado por
+                        tecnologia, desenvolvimento web e criação de soluções digitais que resolvem problemas reais.
+                        Trabalho principalmente com Python, FastAPI, Django e JavaScript, unindo programação, bases
+                        de dados e automação para construir plataformas que geram impacto positivo em Angola.
+                    </p>
+                    <div class="hero-buttons animate-on-scroll">
+                        <a href="#projects" class="btn btn-primary">Ver os meus projetos <i
+                                class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Entrar em contacto</a>
+                    </div>
+                    <div class="social-links animate-on-scroll">
+                        <a style="color: white;" href="mailto:delciobentocunha007@gmail.com" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a style="color: white;" href="https://github.com/DelcioCunha" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a style="color: white;" href="https://www.facebook.com/delcio.cunha.2025" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a style="color: white;" href="https://www.instagram.com/delcio_369" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <!-- Confirma se este número de WhatsApp continua correto antes de publicar -->
+                        <a style="color: white;" href="https://wa.me/244947976103" target="_blank" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-indicator"></div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção 2: Sobre Mim -->
+        <!-- ====================================================== -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">A minha história</div>
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image-wrapper animate-on-scroll">
+                        <img src="assets/my_image.jpg" alt="Delcio Cunha">
+                        <div class="status-tag">
+                            <span class="green-dot"></span> Disponível para trabalhar
+                        </div>
+                    </div>
+                    <div class="about-text-content animate-on-scroll">
+                        <p>Sou um desenvolvedor angolano apaixonado por tecnologia, desenvolvimento web e criação de
+                            soluções digitais que resolvem problemas reais. Atualmente concluo a formação técnica em
+                            Informática no ITEL, desenvolvendo projetos que unem programação, bases de dados e
+                            inteligência artificial.</p>
+                        <p>Tenho especial interesse em plataformas web, automação, APIs e empreendedorismo
+                            tecnológico, e procuro criar soluções que contribuam para o crescimento tecnológico de
+                            Angola — do planeamento à implementação, com foco em desempenho, segurança e usabilidade.</p>
+                        <div class="info-box-wrapper glass-card">
+                            <div class="info-box">
+                                <div>
+                                    <span class="info-label">Nome</span>
+                                    <p>Delcio Cunha</p>
+                                </div>
+                                <div>
+                                    <span class="info-label">Email</span>
+                                    <p>delciobentocunha007@gmail.com</p>
+                                </div>
+                                <div>
+                                    <span class="info-label">Localização</span>
+                                    <p>Luanda, Angola</p>
+                                </div>
+                                <div>
+                                    <span class="info-label">Disponibilidade</span>
+                                    <p class="available-status">Aberto a oportunidades</p>
+                                </div>
+                            </div>
+                            <a href="download-resume.html" class="btn-download-resume">Download CV <i
+                                    class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção 3: Competências -->
+        <!-- ====================================================== -->
+        <section id="skills" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">As minhas competências</div>
+                    <h2 class="section-title">Stack Técnica</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-wrapper">
+                    <div class="skills-grid">
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-bolt"></i> FastAPI</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-layer-group"></i> Django & DRF</span>
+                                <span class="skill-percent">Intermédio-Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                                <span class="skill-percent">Intermédio</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fab fa-html5"></i> HTML5 & CSS3</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-database"></i> PostgreSQL / SQL</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-leaf"></i> MongoDB / MySQL / SQL Server</span>
+                                <span class="skill-percent">Intermédio</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-plug"></i> APIs REST & Integração</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fas fa-spider"></i> Web Scraping (Selenium / BeautifulSoup)</span>
+                                <span class="skill-percent">Intermédio-Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+                        </div>
+
+                        <div class="skill-item glass-card animate-on-scroll">
+                            <div class="skill-header">
+                                <span class="skill-name"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                                <span class="skill-percent">Avançado</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <style>
+                    .skill-item { padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+                    .skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 1rem; }
+                    .skill-name { font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; }
+                    .skill-percent { font-size: 0.8rem; opacity: 0.7; font-weight: 500; white-space: nowrap; }
+                    .skill-bar { background: rgba(255,255,255,0.1); border-radius: 999px; height: 8px; overflow: hidden; }
+                    .skill-fill { height: 100%; border-radius: 999px; transition: width 1s ease; }
+                </style>
+
+                <p class="animate-on-scroll" style="text-align:center; color: var(--text-secondary); margin-top: 2rem; font-size: 0.9rem;">
+                    Também trabalho com Java, C++/C#, VS Code, Cursor IDE, Postman, DBeaver e Canva.
+                </p>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção 4: Projetos em Destaque -->
+        <!-- ====================================================== -->
+        <section id="projects" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">Alguns dos meus trabalhos recentes</div>
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- PROJETO 1: URBANDA -->
+                <div class="project-showcase-grid animate-on-scroll">
+                    <div class="showcase-card">
+                        <div class="showcase-header"><span>Projeto URBANDA</span></div>
+                        <div class="showcase-content">
+                            <div class="text-features">
+                                <h1>URBANDA<br>PLATAFORMA CÍVICA</h1>
+                                <h4 class="feature-title">FUNCIONALIDADES</h4>
+                                <ul>
+                                    <li>Plataforma de denúncia de problemas urbanos como iluminação pública danificada, lixo e estradas degradadas.</li>
+                                    <li>Permite aos cidadãos reportar alagamentos e saneamento inadequado diretamente à administração.</li>
+                                    <li>Backend construído com FastAPI e PostgreSQL para gestão eficiente das denúncias.</li>
+                                </ul>
+                            </div>
+                            <div class="image-gallery">
+                                <div class="showcase-img cover-placeholder cover-1"><i class="fas fa-city"></i><span class="cover-label">Urbanda</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-column">
+                        <h2>Urbanda</h2>
+                        <p class="project-category">Web, Full-stack, Plataforma Cívica</p>
+                        <div class="project-tags">
+                            <span>FastAPI</span><span>PostgreSQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="description-box glass-card">
+                            <p>Plataforma de denúncia de problemas urbanos, permitindo aos cidadãos reportarem
+                                ocorrências de infraestrutura para melhorar a sua cidade.</p>
+                        </div>
+                        <div class="project-links">
+                            <!-- Adicionar link do GitHub quando o repositório for público -->
+                            <a href="https://github.com/DelcioCunha" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJETO 2: Kudjima -->
+                <div class="project-showcase-grid layout-reversed animate-on-scroll">
+                    <div class="showcase-card">
+                        <div class="showcase-header"><span>Projeto Kudjima</span></div>
+                        <div class="showcase-content">
+                            <div class="text-features">
+                                <h1>KUDJIMA<br>GESTÃO EMPRESARIAL</h1>
+                                <h4 class="feature-title">FUNCIONALIDADES</h4>
+                                <ul>
+                                    <li>Sistema de gestão para uma empresa de comercialização de produtos do mar.</li>
+                                    <li>Controlo de stock, utilizadores, vendas e operações administrativas.</li>
+                                    <li>Construído com FastAPI e PostgreSQL para desempenho e fiabilidade.</li>
+                                </ul>
+                            </div>
+                            <div class="image-gallery">
+                                <div class="showcase-img cover-placeholder cover-2"><i class="fas fa-boxes-stacked"></i><span class="cover-label">Kudjima</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-column">
+                        <h2>Kudjima</h2>
+                        <p class="project-category">Web, Full-stack, Sistema de Gestão</p>
+                        <div class="project-tags">
+                            <span>FastAPI</span><span>PostgreSQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="description-box glass-card">
+                            <p>Sistema de gestão empresarial completo para controlo de stock, vendas e utilizadores
+                                de uma empresa de comercialização de produtos do mar.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/DelcioCunha" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJETO 3: Plataforma de Comparação de Preços -->
+                <div class="project-showcase-grid animate-on-scroll">
+                    <div class="showcase-card">
+                        <div class="showcase-header"><span>Comparador de Preços</span></div>
+                        <div class="showcase-content">
+                            <div class="text-features">
+                                <h1>COMPARADOR<br>DE PREÇOS</h1>
+                                <h4 class="feature-title">FUNCIONALIDADES</h4>
+                                <ul>
+                                    <li>Compara preços entre supermercados angolanos automaticamente.</li>
+                                    <li>Recolha de dados via Web Scraping com Selenium e BeautifulSoup.</li>
+                                    <li>Armazenamento e consulta de preços em PostgreSQL através de uma API FastAPI.</li>
+                                </ul>
+                            </div>
+                            <div class="image-gallery">
+                                <div class="showcase-img cover-placeholder cover-3"><i class="fas fa-magnifying-glass-chart"></i><span class="cover-label">Comparador</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-column">
+                        <h2>Comparador de Preços</h2>
+                        <p class="project-category">Python, Web Scraping, Dados</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Selenium</span><span>BeautifulSoup</span><span>PostgreSQL</span><span>FastAPI</span>
+                        </div>
+                        <div class="description-box glass-card">
+                            <p>Sistema para comparar preços entre supermercados angolanos através de recolha
+                                automática de dados utilizando Web Scraping.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/DelcioCunha" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outros projetos: grelha compacta -->
+                <h3 class="animate-on-scroll" style="margin: 4rem 0 1.5rem; font-size: 1.5rem;">Outros Projetos</h3>
+                <div class="projects-grid">
+
+                    <div class="project-card glass-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <div class="project-image cover-placeholder cover-4"><i class="fas fa-industry"></i></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Monitorização Industrial (ComAp API)</h3>
+                            <p>Aplicação para integração de equipamentos industriais utilizando a API WSV da ComAp,
+                                armazenando dados em PostgreSQL para monitorização e análise.</p>
+                            <div class="project-tags">
+                                <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>REST API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/DelcioCunha" target="_blank" class="btn-project-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <div class="project-image cover-placeholder cover-5"><i class="fas fa-trophy"></i></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Liga Aliança Nacional de Guildas Angolanas</h3>
+                            <p>Organização e gestão de competições de Free Fire, incluindo regulamentos, identidade
+                                visual, materiais promocionais e gestão de jornadas da liga.</p>
+                            <div class="project-tags">
+                                <span>Canva</span><span>IA Generativa</span><span>Design Digital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <div class="project-image cover-placeholder cover-6"><i class="fas fa-laptop-code"></i></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Website Portfólio</h3>
+                            <p>Este portfólio pessoal, desenvolvido para apresentar os meus projetos, competências,
+                                experiência profissional e objetivos de carreira.</p>
+                            <div class="project-tags">
+                                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/DelcioCunha" target="_blank" class="btn-project-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção 5: Experiência & Formação -->
+        <!-- ====================================================== -->
+        <section id="experience" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">A minha jornada profissional</div>
+                    <h2 class="section-title">Experiência & Formação</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <h3>Técnico Médio em Informática</h3>
+                            <p class="timeline-meta">Instituto de Telecomunicações (ITEL) | 2021 – 2026</p>
+                            <p>Formação técnica nas áreas de programação, desenvolvimento web, engenharia de
+                                software, redes de computadores, bases de dados e desenvolvimento de aplicações.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <h3>Desenvolvedor Full Stack — Projetos Pessoais</h3>
+                            <p class="timeline-meta">2023 – Presente</p>
+                            <p>Desenvolvimento de plataformas web, APIs REST, automações, sistemas empresariais e
+                                soluções digitais utilizando tecnologias modernas como Python, FastAPI e Django.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <h3>Criador de Conteúdo e Gestor — PixelVerse</h3>
+                            <p class="timeline-meta">Gestão de Comunidade</p>
+                            <p>Criação de conteúdos relacionados com tecnologia, cultura pop e entretenimento,
+                                incluindo design gráfico e gestão de comunidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção 6: Blog (em construção) -->
+        <!-- ====================================================== -->
+        <section id="blog" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">Partilhando o meu conhecimento</div>
+                    <h2 class="section-title">Do Blog</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="coming-soon-card glass-card animate-on-scroll">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Os primeiros artigos estão a caminho</h3>
+                    <p>Estou a preparar conteúdos sobre desenvolvimento web, Python e a minha jornada como
+                        programador em Angola. Volta em breve para ler os primeiros artigos.</p>
+                    <div class="topic-pills">
+                        <span>Como desenvolver APIs com FastAPI</span>
+                        <span>PostgreSQL na prática</span>
+                        <span>Desenvolvimento Web moderno</span>
+                        <span>IA aplicada ao desenvolvimento</span>
+                        <span>A minha jornada como programador</span>
+                        <span>Tecnologia e inovação em Angola</span>
+                    </div>
+                </div>
+
+                <div class="view-all-posts-container animate-on-scroll">
+                    <a href="blog.html" class="btn btn-secondary">Ver o Blog</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- Secção Prémios & Conquistas — desativada até existirem prémios reais -->
+        <!-- Para reativar: descomenta o bloco abaixo, adiciona o link "Awards" -->
+        <!-- em components/header.html e liga css/components/awards.css no <head> -->
+        <!-- ======================================================
+        <section id="awards" class="content-section"> ... </section>
+        ====================================================== -->
+
+        <!-- ====================================================== -->
+        <!-- Secção 7: Contacto -->
+        <!-- ====================================================== -->
+        <section id="contact" class="content-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">Vamos trabalhar juntos</div>
+                    <h2 class="section-title">Entre em Contacto</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-wrapper glass-card animate-on-scroll">
+                        <h3>Informações de Contacto</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span>Email</span>
+                                <a href="mailto:delciobentocunha007@gmail.com">delciobentocunha007@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <span>WhatsApp</span>
+                                <a href="https://wa.me/244947976103" target="_blank">+244 947 976 103</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Localização</span>
+                                <span>Luanda, Angola</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <span>GitHub</span>
+                                <a href="https://github.com/DelcioCunha" target="_blank">github.com/DelcioCunha</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-facebook"></i>
+                            <div>
+                                <span>Facebook</span>
+                                <a href="https://www.facebook.com/delcio.cunha.2025" target="_blank">delcio.cunha.2025</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <span>Instagram</span>
+                                <a href="https://www.instagram.com/delcio_369" target="_blank">@delcio_369</a>
+                            </div>
+                        </div>
+                        <h3 class="status-title">Estado Atual</h3>
+                        <div class="contact-status">
+                            <span class="green-dot"></span>
+                            Disponível para oportunidades de emprego em Tecnologia
+                        </div>
+                    </div>
+                    <form class="contact-form glass-card animate-on-scroll" action="https://formspree.io" method="POST">
+                        <h3>Enviar Mensagem</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="O seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="O seu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="A sua Mensagem"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder" class="main-footer"></footer>
+
+    <!-- ====================================================== -->
+    <!-- Leitor de música — desativado (sem faixas próprias/licenciadas ainda) -->
+    <!-- Para reativar: adiciona faixas em js/playlist.js, cola o widget do -->
+    <!-- music-player-widget aqui, e liga css/components/music-player.css e -->
+    <!-- js/playlist.js. Ver README.md para instruções. -->
+    <!-- ====================================================== -->
+
+    <script src="js/scripts.js"></script>
+    <script src="js/load-components.js"></script>
+</body>
+
+</html>

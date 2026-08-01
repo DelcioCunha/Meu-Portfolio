@@ -1,0 +1,94 @@
+/* File: css/resume-page.css */
+
+/* --- Wrapper chung cho trang con --- */
+.page-wrapper {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+}
+
+/* --- Layout chính 2 cột --- */
+.resume-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Cột trái rộng hơn một chút */
+    gap: 2.5rem;
+    align-items: flex-start;
+    margin-top: 4rem;
+}
+
+/* --- Cột Trái: Preview ảnh CV --- */
+.resume-preview {
+    padding: 1rem; /* Padding nhỏ để tạo viền */
+    position: sticky; /* Giúp preview cố định khi cuộn */
+    top: 10rem; /* Vị trí bắt đầu cố định, dưới header */
+}
+.resume-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem; /* Bo góc ảnh */
+}
+
+/* --- Cột Phải: Các lựa chọn tải về --- */
+.download-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.download-card {
+    padding: 2rem;
+}
+
+.download-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+.download-header i {
+    font-size: 1.5rem;
+    color: var(--gradient-purple);
+}
+.download-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.download-desc {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.download-buttons .btn {
+    flex-grow: 1; /* Cho các nút có chiều rộng bằng nhau */
+    justify-content: center; /* Căn giữa nội dung nút */
+}
+
+.btn-download{
+    font-size: 14px;
+}
+
+
+/* --- Responsive cho màn hình nhỏ --- */
+@media (max-width: 992px) {
+    .resume-container {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    }
+    .resume-preview {
+        position: static; /* Bỏ cố định trên mobile */
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-buttons {
+        flex-direction: column; /* Xếp các nút dọc trên mobile */
+    }
+}

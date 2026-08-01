@@ -1,0 +1,130 @@
+/* ====================================================== */
+/* --- BỔ SUNG: LIGHT/DARK MODE & NÚT CHUYỂN THEME --- */
+/* ====================================================== */
+
+
+
+
+/* --- Style cho Nút Chuyển Theme --- */
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* Đảm bảo nút không bị co lại */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode .theme-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn .fa-sun,
+.theme-toggle-btn .fa-moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Trạng thái Dark (mặc định): Hiện mặt trăng, ẩn mặt trời */
+.theme-toggle-btn .fa-moon {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.theme-toggle-btn .fa-sun {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+}
+
+/* Trạng thái Light: Ẩn mặt trăng, hiện mặt trời */
+body.light-mode .theme-toggle-btn .fa-moon {
+    transform: translate(-50%, 150%);
+    opacity: 0;
+}
+
+body.light-mode .theme-toggle-btn .fa-sun {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+
+/* --- Các điều chỉnh cho Light Mode --- */
+body.light-mode .main-header {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .resume-button {
+    color: #f4f4f5;
+    /* Chữ trắng */
+}
+
+body.light-mode .main-nav a.is-active {
+    color: var(--text-primary);
+}
+
+body.light-mode .nav-indicator {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .welcome-badge {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+body.light-mode .btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .social-links a {
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+body.light-mode .social-links a:hover {
+    color: var(--text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Đổi màu cho các tiêu đề phụ như "General Expertise", "Soft Skills"... */
+body.light-mode .skills-subtitle {
+    color: #6200ee;
+    /* Một màu tím đậm, dễ đọc trên nền trắng */
+}
+
+/* Đổi màu cho từng ô kỹ năng (pill/tag) */
+body.light-mode .grid-item {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Nền xám nhạt */
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
+    /* Chữ màu xám đậm, kế thừa từ biến màu */
+}
+
+/* Đổi màu cho hiệu ứng hover của ô kỹ năng */
+body.light-mode .grid-item:hover {
+    color: var(--text-primary);
+    /* Chữ màu đen */
+    border-color: #007bff;
+    /* Viền xanh dương đậm hơn */
+    background-color: rgba(0, 123, 255, 0.1);
+    /* Nền xanh dương nhạt */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
