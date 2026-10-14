@@ -117,6 +117,7 @@
     if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
     window.DC.lenis && window.DC.lenis.stop();
     document.body.style.overflow = 'hidden';
+    html.classList.add('modal-open');
     const inner = $('.case-in', d); inner.scrollTop = 0;
     if (window.gsap && !reduce) gsap.fromTo($$('.case-sec,.case-meta', d), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .7, stagger: .07, delay: .1, clearProps: 'transform,opacity' });
     $$('.live-stage', d).forEach(loadLive);
@@ -154,7 +155,7 @@
     const close = () => d.close ? d.close() : d.removeAttribute('open');
     $$('[data-close]', d).forEach(x => x.addEventListener('click', close));
     d.addEventListener('click', e => { if (e.target === d) close(); });
-    d.addEventListener('close', () => { window.DC.lenis && window.DC.lenis.start(); document.body.style.overflow = ''; opener && opener.focus(); });
+    d.addEventListener('close', () => { window.DC.lenis && window.DC.lenis.start(); document.body.style.overflow = ''; html.classList.remove('modal-open'); opener && opener.focus(); });
   });
   // abrir diretamente por endereço: projetos.html#urbanda
   const h = location.hash.replace('#', '');
