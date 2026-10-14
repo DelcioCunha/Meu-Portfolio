@@ -7,7 +7,7 @@
     redes: { name: 'Redes e Segurança', short: 'Redes', color: '#F06A5F', desc: 'Firewall e serviços de rede para controlar segurança e tráfego.' },
     monit: { name: 'Monitorização', short: 'Monitorização', color: '#43D68C', desc: 'Monitorização contínua de servidores e serviços para garantir disponibilidade.' },
     back: { name: 'Back-end e Bases de Dados', short: 'Back-end', color: '#B48CFF', desc: 'Usado no URBANDA: autenticação, gestão de utilizadores e APIs testadas com Postman.' },
-    front: { name: 'Front-end', short: 'Front-end', color: '#7CC4FF', desc: 'Usado nos websites GEPGEO e C3-Geo: bilingue, PWA, Schema.org, SVG e animações.' },
+    front: { name: 'Front-end', short: 'Front-end', color: '#7CC4FF', desc: 'Usado nos websites GEPGEO, C3-Geo e Kudjima: bilingue, PWA, Schema.org, SVG, animações e loja online.' },
     outras: { name: 'Outras', short: 'Outras', color: '#8B9BB0', desc: 'Competências complementares do trabalho freelance e da gestão de projetos.' }
   };
   const SKILLS = [
@@ -23,6 +23,7 @@
     'URBANDA': { sub: 'Sistema de Gestão de Denúncias Urbanas · 2024–2025', uses: ['Python', 'Django', 'PostgreSQL', 'APIs REST', 'Postman', 'HTML5', 'CSS3', 'JavaScript'] },
     'GEPGEO': { sub: 'Website institucional · 10 páginas', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo', 'SEO técnico'] },
     'C3-Geo': { sub: 'Website institucional · 6 páginas', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo'] },
+    'Kudjima': { sub: 'Loja online · 4 páginas · 18 produtos', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo'] },
     'Freelance': { sub: 'Gestor de Redes Sociais · 2022–2026', uses: ['Redes sociais', 'Análise de dados', 'Gestão de projetos digitais'] }
   };
   const usedIn = name => Object.keys(CTX).filter(k => CTX[k].uses.includes(name));
@@ -204,7 +205,7 @@
       return list.map(([kk, c]) => `<span class="s">[${c.name}]</span>\n  ${SKILLS.filter(s => s[1] === kk).map(s => s[0]).join(' · ')}`).join('\n');
     } },
     experiencia: { d: 'percurso profissional', f: () => `<span class="a">2024–2025</span>  Técnico de Infraestrutura de TI (Estágio) · ITEL\n            ESXi · Windows/Linux · pfSense · DNS · Zabbix · Nagios\n<span class="a">2022–2026</span>  Gestor de Redes Sociais (Freelancer)\n            PIXELVERSE · KUDJIMA · ZANIRA` },
-    projetos: { d: 'trabalho entregue', f: () => `<span class="g">●</span> GEPGEO Consultoria   website 10 páginas · PT/EN · PWA · mapa 3D\n<span class="g">●</span> C3-Geo               website 6 páginas · SVG · WhatsApp Business\n<span class="g">●</span> URBANDA              Django + PostgreSQL · APIs REST · painel admin\n\n<a href="https://delciocunha.github.io/GEPgeo/" target="_blank" rel="noopener">delciocunha.github.io/GEPgeo</a>\n<a href="https://delciocunha.github.io/C3geo/" target="_blank" rel="noopener">delciocunha.github.io/C3geo</a>\n<span class="m">→ escreva "abrir projetos" para ver os estudos de caso</span>` },
+    projetos: { d: 'trabalho entregue', f: () => `<span class="g">●</span> GEPGEO Consultoria   website 10 páginas · PT/EN · PWA · mapa 3D\n<span class="g">●</span> C3-Geo               website 6 páginas · SVG · WhatsApp Business\n<span class="g">●</span> URBANDA              Django + PostgreSQL · APIs REST · painel admin\n<span class="g">●</span> Kudjima              loja online · 18 produtos · pedidos por WhatsApp\n\n<a href="https://delciocunha.github.io/GEPgeo/" target="_blank" rel="noopener">delciocunha.github.io/GEPgeo</a>\n<a href="https://delciocunha.github.io/C3geo/" target="_blank" rel="noopener">delciocunha.github.io/C3geo</a>\n<a href="https://nataniela-melo.github.io/Kudjima/" target="_blank" rel="noopener">nataniela-melo.github.io/Kudjima</a>\n<span class="m">→ escreva "abrir projetos" para ver os estudos de caso</span>` },
     formacao: { d: 'percurso académico', f: () => `<span class="a">2019–2025</span>  Ensino Médio · ITEL, Luanda\n<span class="a">2015–2018</span>  Ensino Secundário (I Ciclo) · Escola n.º 1107 do Bairro Azul` },
     idiomas: { d: 'línguas', f: () => `Português  <span class="g">█████</span>  nativo\nInglês     <span class="s">███</span>░░  intermédio\nEspanhol   <span class="s">███</span>░░  intermédio` },
     contacto: { d: 'como falar comigo', f: () => `email     ${CONTACT.email}\ntelefone  ${CONTACT.phoneLabel}\nmorada    Av. Marien Ngouabi, Maianga — Luanda\n<span class="m">→ "abrir contacto" para escrever uma mensagem</span>` },
