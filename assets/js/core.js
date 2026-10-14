@@ -26,7 +26,7 @@
     { href: 'projetos.html', key: 'projetos', name: 'Projetos', hint: 'estudos de caso' },
     { href: 'contacto.html', key: 'contacto', name: 'Contacto', hint: 'falar comigo' }
   ];
-  const CONTACT = { email: 'delciobentocunha007@gmail.com', phone: '+244947976103', phoneLabel: '+244 947 976 103', wa: 'https://wa.me/244947976103', cv: 'assets/docs/CV-Delcio-Cunha.pdf' };
+  const CONTACT = { email: 'delciobentocunha007@gmail.com', phone: '+244947976103', phoneLabel: '+244 947 976 103', wa: 'https://wa.me/244947976103', cv: 'assets/docs/CV-Delcio-Cunha.pdf', linkedin: 'https://www.linkedin.com/in/delcio-cunha-b9760a3ba', github: 'https://github.com/DelcioCunha', instagram: 'https://www.instagram.com/delcio_369/', facebook: 'https://www.facebook.com/delcio.cunha.2025/', x: 'https://x.com/DelcioCunha369' };
 
   /* ---------- API pública ---------- */
   const readyQ = [];
@@ -330,6 +330,12 @@
       { group: 'Ações', icon: '☏', label: 'Copiar telefone', hint: CONTACT.phoneLabel, run: () => copy(CONTACT.phone, CONTACT.phoneLabel) },
       { group: 'Ações', icon: 'W', label: 'Abrir WhatsApp', hint: 'nova janela', run: () => window.open(CONTACT.wa, '_blank', 'noopener') },
       { group: 'Ações', icon: 'CV', label: 'Descarregar CV (PDF)', hint: 'PDF', run: () => { const a = d.createElement('a'); a.href = CONTACT.cv; a.download = 'CV-Delcio-Cunha.pdf'; d.body.appendChild(a); a.click(); a.remove(); } },
+      { group: 'Ações', icon: 'in', label: 'Abrir LinkedIn', hint: 'nova janela', run: () => window.open(CONTACT.linkedin, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'GH', label: 'Abrir GitHub', hint: 'nova janela', run: () => window.open(CONTACT.github, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'IG', label: 'Abrir Instagram', hint: '@delcio_369', run: () => window.open(CONTACT.instagram, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'f', label: 'Abrir Facebook', hint: 'delcio.cunha.2025', run: () => window.open(CONTACT.facebook, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'X', label: 'Abrir X', hint: '@DelcioCunha369', run: () => window.open(CONTACT.x, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'Ct', label: 'Ver certificações', hint: 'sobre mim', run: () => navigate('sobre.html#cv') },
       { group: 'Ações', icon: '↑', label: 'Voltar ao topo', hint: '', run: () => scrollTo(0) }
     ];
     let filtered = items, sel = 0, lastFocus = null;

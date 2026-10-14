@@ -278,3 +278,5 @@ html.js [data-reveal]{will-change:transform,opacity}
   .next-page .arrowbox{width:52px;height:58px}
   .next-page .wrap{gap:14px}
 }
+
+.site-foot .foot-social{display:flex;flex-wrap:wrap;gap:6px 16px}
