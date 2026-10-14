@@ -157,6 +157,32 @@
     });
   }
 
+
+  /* ---------- ANGA: contadores e separadores ---------- */
+  const agPane = $('#agPane');
+  if (agPane) {
+    const PANES = {
+      liga: () => `<h4>Liga Aliança · Temporada 1</h4><div class="ag-dots" aria-label="Rodada 20 de 25">${Array.from({ length: 25 }, (_, i) => `<i class="${i < 19 ? 'on' : i === 19 ? 'on now' : ''}"></i>`).join('')}</div><div class="ag-row"><span>rodada <b>20</b> de 25</span><span><b>24</b> guildas na tabela</span></div>`,
+      mercado: () => `<h4>Mercado da Aliança</h4><p>Diamantes, passes e mais, com vendedores verificados e selos de cliente.</p><div class="ag-badges"><span>Diamantes</span><span>Passes</span><span class="v">✓ vendedor verificado</span><span>selo de cliente</span></div>`,
+      historia: () => `<h4>Da ONGA à Aliança Nacional</h4><div class="ag-row"><span>fundação</span><b>22 mar 2025</b></div><div class="ag-row"><span>Liga Aliança</span><b>5 jan 2026</b></div><div class="ag-row"><span>selos de cliente</span><b>ago 2026</b></div>`
+    };
+    const showAg = k => { agPane.innerHTML = PANES[k](); agPane.style.animation = 'none'; void agPane.offsetWidth; agPane.style.animation = ''; };
+    showAg('liga');
+    $$('.ag-tabs button').forEach(b => b.addEventListener('click', () => { $$('.ag-tabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); }); showAg(b.dataset.ag); }));
+    const nums = $$('.ag-stats b');
+    const run = () => nums.forEach(n => {
+      const to = +n.dataset.to, fmt = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      if (reduce) { n.textContent = fmt(to); return; }
+      const t0 = performance.now(), dur = 1400;
+      const step = t => { const k = Math.min(1, (t - t0) / dur); n.textContent = fmt(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { run(); io.disconnect(); } }, { threshold: .3 });
+      io.observe(agPane.closest('.mock'));
+    } else run();
+  }
+
   /* ---------- estudos de caso ---------- */
   let opener = null;
   $$('[data-case]').forEach(b => b.addEventListener('click', () => {
@@ -208,5 +234,5 @@
   // abrir diretamente por endereço: projetos.html#urbanda
   const h = location.hash.replace('#', '');
   if (h === 'redes') window.DC.ready(() => setTimeout(() => { const t = $('#redes'); if (!t) return; window.DC.lenis ? window.DC.lenis.scrollTo(t, { offset: -80, immediate: true }) : t.scrollIntoView(); }, 700));
-  if (['gepgeo', 'c3', 'urbanda', 'kudjima'].includes(h)) window.DC.ready(() => setTimeout(() => { const b = $(`[data-case="${h}"]`); b && b.click(); }, 600));
+  if (['gepgeo', 'c3', 'urbanda', 'kudjima', 'anga'].includes(h)) window.DC.ready(() => setTimeout(() => { const b = $(`[data-case="${h}"]`); b && b.click(); }, 600));
 })();

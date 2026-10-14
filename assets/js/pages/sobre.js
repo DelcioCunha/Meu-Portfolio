@@ -52,6 +52,9 @@
     { name: 'Estágio', items: [
       { a: 2024, b: 2026, cls: 'work', short: 'Estágio ITEL', label: 'Técnico de Infraestrutura de TI', yrs: '2024 – 2025', txt: 'Estágio profissional no ITEL: VMware ESXi, Windows e Linux, pfSense e DNS, monitorização com Zabbix e Nagios, resolução de incidentes.' }
     ]},
+    { name: 'Comunidade', items: [
+      { a: 2025.2, b: 2027, cls: 'proj', short: 'ANGA', label: 'ANGA · Fundador e desenvolvedor', yrs: 'mar 2025 – hoje', txt: 'Fundou a Aliança Nacional de Guildas Angolanas, comunidade de Free Fire com 1.709 membros e 32 grupos, organizou a Liga Aliança e desenvolveu o website oficial.' }
+    ]},
     { name: 'Projetos', items: [
       { a: 2024, b: 2026, cls: 'proj', label: 'URBANDA', yrs: '2024 – 2025', txt: 'Sistema de Gestão de Denúncias Urbanas em Django e PostgreSQL, com autenticação, painel administrativo e APIs testadas no Postman.' }
     ]}
