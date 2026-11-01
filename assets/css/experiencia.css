@@ -80,6 +80,9 @@
 .client:hover{border-color:var(--amber);transform:translateY(-3px)}
 .client b{font:800 18px/1 var(--f-display);letter-spacing:-.01em}
 .client span{font:400 12px/1.4 var(--f-mono);color:var(--muted)}
+.client{text-decoration:none;color:inherit}
+.client small{font:500 11px/1 var(--f-mono);color:var(--signal-2);margin-top:6px}
+.job-org a{color:var(--signal-2)}
 @media (max-width:640px){.clients{grid-template-columns:1fr}}
 
 .cycle-wrap{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:26px}
