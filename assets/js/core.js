@@ -21,8 +21,8 @@
   const PAGES = [
     { href: 'index.html', key: 'inicio', name: 'Início', hint: 'apresentação' },
     { href: 'sobre.html', key: 'sobre', name: 'Sobre mim', hint: 'perfil e percurso' },
-    { href: 'experiencia.html', key: 'experiencia', name: 'Experiência', hint: 'estágio e freelance' },
-    { href: 'competencias.html', key: 'competencias', name: 'Competências', hint: 'stack e terminal' },
+    { href: 'experiencia.html', key: 'experiencia', name: 'Experiência', hint: 'projetos, estágio e freelance' },
+    { href: 'competencias.html', key: 'competencias', name: 'Competências', hint: 'IA, dev, dados e terminal' },
     { href: 'projetos.html', key: 'projetos', name: 'Projetos', hint: 'estudos de caso' },
     { href: 'contacto.html', key: 'contacto', name: 'Contacto', hint: 'falar comigo' }
   ];
@@ -130,7 +130,7 @@
     const loop = () => { rx += (mx - rx) * .18; ry += (my - ry) * .18; ring.style.transform = `translate3d(${rx}px,${ry}px,0)`; requestAnimationFrame(loop); };
     loop();
     d.addEventListener('pointerover', e => {
-      const lab = e.target.closest('[data-cursor]');
+      const lab = null; // sem rótulo "abrir": o cursor só cresce ligeiramente sobre elementos clicáveis
       const hov = e.target.closest('a,button,input,textarea,select,label,[role="button"],[data-hover]');
       ring.classList.toggle('is-label', !!lab);
       if (lab) lbl.textContent = lab.dataset.cursor;

@@ -9,11 +9,13 @@
   });
 
   const phrases = [
-    'Configuro <b>ambientes virtualizados</b> com VMware ESXi.',
-    'Protejo redes com <b>firewall pfSense</b> e DNS.',
-    'Monitorizo servidores com <b>Zabbix e Nagios</b>.',
-    'Construo back-ends em <b>Django e PostgreSQL</b>.',
-    'Desenho <b>websites rápidos</b>, bilingues e otimizados para SEO.'
+    'Integro <b>inteligência artificial</b> no desenvolvimento e na automação.',
+    'Construo <b>web apps e aplicações mobile</b> full stack.',
+    'Desenvolvo <b>websites</b> pequenos, médios e grandes.',
+    'Modelo <b>bases de dados</b> em PostgreSQL e MySQL e analiso dados.',
+    'Extraio e integro dados com <b>APIs e web scraping</b>.',
+    'Configuro <b>virtualização, sistemas operativos</b> e redes.',
+    'Crio e giro <b>conteúdo para redes sociais</b>.'
   ];
   const rot = $('#rot');
   async function rotate() {

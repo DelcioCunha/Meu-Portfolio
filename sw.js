@@ -1,5 +1,5 @@
 /* Service worker — o portfólio funciona offline depois da primeira visita */
-const CACHE = 'dc-portfolio-v12';
+const CACHE = 'dc-portfolio-v13';
 const ASSETS = [
  "./404.html",
  "./assets/css/base.css",
@@ -18,6 +18,18 @@ const ASSETS = [
  "./assets/img/icon-192.png",
  "./assets/img/icon-512.png",
  "./assets/img/og.jpg",
+ "./assets/img/projetos/adana-agenda.jpg",
+ "./assets/img/projetos/adana-aviso.jpg",
+ "./assets/img/projetos/adana-logo.jpg",
+ "./assets/img/projetos/adana-ola.jpg",
+ "./assets/img/projetos/adana-pastas.jpg",
+ "./assets/img/projetos/adana-site.jpg",
+ "./assets/img/projetos/adana-wikipedia.jpg",
+ "./assets/img/projetos/hortomar-codigo.jpg",
+ "./assets/img/projetos/hortomar-consola.jpg",
+ "./assets/img/projetos/hortomar-csv.jpg",
+ "./assets/img/projetos/hortomar-fonte.jpg",
+ "./assets/img/projetos/hortomar-powerquery.jpg",
  "./assets/js/core.js",
  "./assets/js/pages/competencias.js",
  "./assets/js/pages/contacto.js",

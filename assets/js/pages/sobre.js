@@ -5,10 +5,10 @@
 
   /* ---------- manifesto: palavras acendem com o scroll ---------- */
   const man = $('#manifesto');
-  const HOT = ['VMware', 'ESXi,', 'pfSense', 'Zabbix', 'Nagios.', 'Django', 'PostgreSQL', 'JavaScript.', 'estáveis,', 'seguros', 'automatizados.'];
+  const HOT = ['inteligência', 'artificial', 'virtualização', 'mobile', 'web', 'full', 'stack', 'GPT-5', 'Claude', 'Code', 'PyCharm', 'MySQL', 'PostgreSQL', 'Office', 'estáveis', 'seguras', 'bem', 'pensadas'];
   if (man) {
     const words = man.textContent.trim().split(/\s+/);
-    man.innerHTML = words.map(w => `<span class="w${HOT.includes(w) ? ' hot' : ''}">${w}</span>`).join(' ');
+    man.innerHTML = words.map(w => `<span class="w${HOT.includes(w.replace(/[.,:;]$/, '')) ? ' hot' : ''}">${w}</span>`).join(' ');
     const ws = $$('.w', man);
     if (hasST && !reduce) {
       ScrollTrigger.create({
@@ -50,12 +50,10 @@
       { a: 2022, b: 2027, cls: 'work', label: 'Gestor de Redes Sociais · Freelancer', yrs: '2022 – 2026', txt: 'PIXELVERSE, KUDJIMA e ZANIRA: planeamento de conteúdos, gestão de comunidade, estratégia de engajamento e identidade visual no Facebook.' },
     ]},
     { name: 'Estágio', items: [
-      { a: 2024, b: 2026, cls: 'work', short: 'Estágio ITEL', label: 'Técnico de Infraestrutura de TI', yrs: '2024 – 2025', txt: 'Estágio profissional no ITEL: VMware ESXi, Windows e Linux, pfSense e DNS, monitorização com Zabbix e Nagios, resolução de incidentes.' }
-    ]},
-    { name: 'Comunidade', items: [
-      { a: 2025.2, b: 2027, cls: 'proj', short: 'ANGA', label: 'ANGA · Fundador e desenvolvedor', yrs: 'mar 2025 – hoje', txt: 'Fundou a Aliança Nacional de Guildas Angolanas, comunidade de Free Fire com 1.709 membros e 32 grupos, organizou a Liga Aliança e desenvolveu o website oficial.' }
+      { a: 2024, b: 2026, cls: 'work', short: 'Estágio ITEL', label: 'Estágio curricular · Infraestrutura de TI', yrs: '2024 – 2025', txt: 'Estágio curricular no ITEL: VMware ESXi, Windows e Linux, pfSense e DNS, monitorização com Zabbix e Nagios, resolução de incidentes.' }
     ]},
     { name: 'Projetos', items: [
+      { a: 2021, b: 2022, cls: 'proj', short: 'ADANA', label: 'ADANA · Assistente virtual por voz', yrs: '2021', txt: 'Assistente virtual em Python controlada por comandos de voz: cria pastas, escreve por voz, abre aplicações, navega na internet e usa APIs de clima, notícias, YouTube, Google Maps, Facebook e Instagram.' },
       { a: 2024, b: 2026, cls: 'proj', label: 'URBANDA', yrs: '2024 – 2025', txt: 'Sistema de Gestão de Denúncias Urbanas em Django e PostgreSQL, com autenticação, painel administrativo e APIs testadas no Postman.' }
     ]}
   ];

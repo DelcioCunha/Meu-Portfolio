@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Projetos · Délcio Cunha</title>
-<meta name="description" content="Estudos de caso: a comunidade ANGA de Free Fire, a loja online da Kudjima, os websites da GEPGEO Consultoria e C3-Geo, e o sistema URBANDA em Django e PostgreSQL.">
+<meta name="description" content="Estudos de caso: Hortomar (web scraping e integração de dados do mar de Angola), ADANA (assistente virtual por voz), websites da GEPGEO Consultoria e C3-Geo, a loja online da Kudjima e o sistema URBANDA em Django e PostgreSQL.">
 <meta name="author" content="Délcio Cunha">
 <meta name="theme-color" content="#0A0F16">
 <meta name="color-scheme" content="dark">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Délcio Cunha · Portfólio">
 <meta property="og:title" content="Projetos · Délcio Cunha">
-<meta property="og:description" content="Estudos de caso: a comunidade ANGA de Free Fire, a loja online da Kudjima, os websites da GEPGEO Consultoria e C3-Geo, e o sistema URBANDA em Django e PostgreSQL.">
+<meta property="og:description" content="Estudos de caso: Hortomar (web scraping e integração de dados do mar de Angola), ADANA (assistente virtual por voz), websites da GEPGEO Consultoria e C3-Geo, a loja online da Kudjima e o sistema URBANDA em Django e PostgreSQL.">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -55,13 +55,14 @@
   <nav class="crumbs" aria-label="Localização"><a href="index.html">~</a><span>/</span><span>projetos</span></nav>
   <p class="eyebrow" data-intro>Projetos</p>
   <h1 class="display">Trabalho <em>entregue</em>.</h1>
-  <p class="lead" data-intro>A comunidade de Free Fire que fundei e o seu website, uma loja online de mariscos e peixe, dois websites institucionais para empresas de topografia e dados geoespaciais, um sistema de gestão construído de raiz e a gestão de três páginas no Facebook.</p>
+  <p class="lead" data-intro>Sistemas de dados com web scraping e APIs, uma assistente virtual controlada por voz, websites institucionais, uma loja online e um sistema full stack construído de raiz, mais a gestão de três páginas no Facebook.</p>
   <div class="proj-index" data-intro>
+    <a href="#p-hortomar" class="pi pi-feat"><b>Hortomar</b><span>★ destaque · scraping + dados</span></a>
+    <a href="#p-adana" class="pi"><b>ADANA</b><span>assistente por voz · 2021</span></a>
     <a href="#p-gepgeo" class="pi"><b>GEPGEO</b><span>website · 10 páginas</span></a>
     <a href="#p-c3" class="pi"><b>C3-Geo</b><span>website · 6 páginas</span></a>
     <a href="#p-urbanda" class="pi"><b>URBANDA</b><span>sistema · 2024–2025</span></a>
     <a href="#p-kudjima" class="pi"><b>Kudjima</b><span>loja online · Sonajovem</span></a>
-    <a href="#p-anga" class="pi"><b>ANGA</b><span>comunidade Free Fire · fundador</span></a>
     <a href="#redes" class="pi"><b>Redes sociais</b><span>3 páginas no Facebook</span></a>
   </div>
   <span class="page-index" aria-hidden="true">04</span>
@@ -72,10 +73,74 @@
     <div class="hg-progress" aria-hidden="true"><span id="hgBar"></span></div>
     <div class="hg-track" id="hgTrack">
 
+      <!-- HORTOMAR (destaque) -->
+      <article class="panel is-feat" id="p-hortomar">
+        <div class="panel-info">
+          <p class="p-count">1 / 6</p>
+          <div class="p-tags"><span class="tag feat">★ Em destaque</span><span class="tag">Dados · APIs · web scraping</span><span class="tag amber">Desenvolvedor</span></div>
+          <h2 class="p-title">Hortomar</h2>
+          <p class="p-sector">Dados atualizados do estado do mar de Angola, prontos para um sistema de gestão de barcos e pescadores</p>
+          <ul class="p-points">
+            <li>Web scraping em Python (requests e BeautifulSoup) e integração de APIs</li>
+            <li>Marés, alturas e coeficiente normalizados num CSV estruturado</li>
+            <li>Saída pensada para integração direta num sistema administrativo de embarcações</li>
+          </ul>
+          <div class="p-actions">
+            <button class="btn btn-primary" type="button" data-case="hortomar" data-magnet>Ver estudo de caso <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>hortomar · pipeline de dados do mar</span></div>
+          <div class="mock-body m-shot">
+            <div class="shot-flow mono" aria-hidden="true"><span>web</span><i>→</i><span>Python</span><i>→</i><span>CSV</span><i>→</i><span>sistema</span></div>
+            <div class="shot-tabs" role="group" aria-label="Capturas do projeto Hortomar">
+              <button type="button" class="on" data-shot="assets/img/projetos/hortomar-fonte.jpg" data-alt="Página de marés de Luanda a ser inspecionada no browser">Fonte</button>
+              <button type="button" data-shot="assets/img/projetos/hortomar-codigo.jpg" data-alt="Código Python de extração com BeautifulSoup no PyCharm">Scraping</button>
+              <button type="button" data-shot="assets/img/projetos/hortomar-csv.jpg" data-alt="Ficheiro dados.csv com marés, alturas e coeficiente">Dados</button>
+              <button type="button" data-shot="assets/img/projetos/hortomar-powerquery.jpg" data-alt="Importação do CSV no Power Query">Power BI</button>
+            </div>
+            <div class="shot-view"><img src="assets/img/projetos/hortomar-fonte.jpg" alt="Página de marés de Luanda a ser inspecionada no browser" width="1105" height="595" loading="lazy"></div>
+          </div>
+          <span class="mock-note">capturas reais · troque de separador</span>
+        </div>
+      </article>
+
+      <!-- ADANA -->
+      <article class="panel" id="p-adana">
+        <div class="panel-info">
+          <p class="p-count">2 / 6</p>
+          <div class="p-tags"><span class="tag">Assistente virtual</span><span class="tag amber">Criador · 2021</span></div>
+          <h2 class="p-title">ADANA</h2>
+          <p class="p-sector">Assistente virtual em Python controlada por comandos de voz</p>
+          <ul class="p-points">
+            <li>Escreve por voz, cria pastas, abre e fecha janelas e aplicações e navega na internet</li>
+            <li>APIs de clima, notícias, YouTube, Google Maps, Facebook e Instagram</li>
+            <li>Regista tarefas e reuniões e avisa com notificações do Windows</li>
+          </ul>
+          <div class="p-actions">
+            <button class="btn btn-primary" type="button" data-case="adana" data-magnet>Ver estudo de caso <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>adana · assistente virtual</span></div>
+          <div class="mock-body m-shot">
+            <div class="shot-flow mono" aria-hidden="true"><span>voz</span><i>→</i><span>comando</span><i>→</i><span>ação</span><i>→</i><span>resposta</span></div>
+            <div class="shot-tabs" role="group" aria-label="Capturas do projeto ADANA">
+              <button type="button" class="on" data-shot="assets/img/projetos/adana-site.jpg" data-alt="Página de apresentação da ADANA">Site</button>
+              <button type="button" data-shot="assets/img/projetos/adana-agenda.jpg" data-alt="Janela de agendamento de notificações">Agenda</button>
+              <button type="button" data-shot="assets/img/projetos/adana-wikipedia.jpg" data-alt="Notificação do Windows com resultado de pesquisa na Wikipedia">Notificação</button>
+              <button type="button" data-shot="assets/img/projetos/adana-pastas.jpg" data-alt="Código Python com comandos para localizar pastas">Código</button>
+            </div>
+            <div class="shot-view"><img src="assets/img/projetos/adana-site.jpg" alt="Página de apresentação da ADANA" width="1075" height="541" loading="lazy"></div>
+          </div>
+          <span class="mock-note">capturas reais · troque de separador</span>
+        </div>
+      </article>
+
       <!-- GEPGEO -->
       <article class="panel" id="p-gepgeo">
         <div class="panel-info">
-          <p class="p-count">1 / 5</p>
+          <p class="p-count">3 / 6</p>
           <div class="p-tags"><span class="tag">Website institucional</span><span class="tag amber">Desenvolvedor Web</span></div>
           <h2 class="p-title">GEPGEO Consultoria</h2>
           <p class="p-sector">Topografia, geoprocessamento, engenharia civil e formação</p>
@@ -113,7 +178,7 @@
       <!-- C3-GEO -->
       <article class="panel" id="p-c3">
         <div class="panel-info">
-          <p class="p-count">2 / 5</p>
+          <p class="p-count">4 / 6</p>
           <div class="p-tags"><span class="tag">Website institucional</span><span class="tag amber">Desenvolvedor Web</span></div>
           <h2 class="p-title">C3-Geo</h2>
           <p class="p-sector">Engenharia de dados geoespaciais: drones, mineração e SIG</p>
@@ -159,7 +224,7 @@
       <!-- URBANDA -->
       <article class="panel" id="p-urbanda">
         <div class="panel-info">
-          <p class="p-count">3 / 5</p>
+          <p class="p-count">5 / 6</p>
           <div class="p-tags"><span class="tag ok">Sistema full stack</span><span class="tag amber">Criador e principal desenvolvedor</span></div>
           <h2 class="p-title">URBANDA</h2>
           <p class="p-sector">Sistema de Gestão de Denúncias Urbanas · 2024 – 2025</p>
@@ -192,7 +257,7 @@
       <!-- KUDJIMA -->
       <article class="panel" id="p-kudjima">
         <div class="panel-info">
-          <p class="p-count">4 / 5</p>
+          <p class="p-count">6 / 6</p>
           <div class="p-tags"><span class="tag">Loja online</span><span class="tag amber">Desenvolvedor Web · parceiro</span></div>
           <h2 class="p-title">Kudjima</h2>
           <p class="p-sector">Venda de mariscos, camarão e peixe congelado · projeto apoiado pelo Sonajovem</p>
@@ -225,43 +290,11 @@
         </div>
       </article>
 
-      <!-- ANGA -->
-      <article class="panel" id="p-anga">
-        <div class="panel-info">
-          <p class="p-count">5 / 5</p>
-          <div class="p-tags"><span class="tag">Comunidade · e-sports</span><span class="tag amber">Fundador e desenvolvedor</span></div>
-          <h2 class="p-title">ANGA</h2>
-          <p class="p-sector">Aliança Nacional de Guildas Angolanas · a comunidade de Free Fire de Angola</p>
-          <ul class="p-points">
-            <li>Criei a comunidade em 2025 e desenvolvi a sua primeira casa digital oficial</li>
-            <li>1.709 membros, 32 grupos e 24 guildas na Liga Aliança</li>
-            <li>Liga, guildas, mercado com vendedores verificados, eventos e galeria</li>
-          </ul>
-          <div class="p-actions">
-            <button class="btn btn-primary" type="button" data-case="anga" data-magnet>Ver estudo de caso <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
-            <a class="btn btn-ghost" href="https://delciocunha.github.io/ANGA/" target="_blank" rel="noopener" data-magnet>Ver site online <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
-        </div>
-        <div class="mock">
-          <div class="mock-bar"><i></i><i></i><i></i><span>delciocunha.github.io/ANGA</span></div>
-          <div class="mock-body m-anga">
-            <div class="ag-nav"><span class="ag-logo">A</span><span class="ag-brand"><b>ANGA</b><small>aliança nacional de guildas angolanas</small></span><span class="ag-wa">Entrar</span></div>
-            <p class="ag-k mono">Comunidade oficial · Free Fire · Angola</p>
-            <div class="ag-stats"><div><b data-to="1709">0</b><span>membros</span></div><div><b data-to="32">0</b><span>grupos</span></div><div><b data-to="24">0</b><span>guildas na liga</span></div></div>
-            <div class="ag-tabs" role="tablist" aria-label="Secções de exemplo">
-              <button type="button" role="tab" class="on" data-ag="liga">Liga</button><button type="button" role="tab" data-ag="mercado">Mercado</button><button type="button" role="tab" data-ag="historia">História</button>
-            </div>
-            <div class="ag-pane" id="agPane"></div>
-          </div>
-          <span class="mock-note">ilustração interativa · troque de separador</span>
-        </div>
-      </article>
-
       <article class="panel panel-end">
         <div class="end-in">
           <p class="eyebrow">Próximo projeto</p>
-          <h2 class="p-title">O seu pode ser o <em class="hl">sexto</em>.</h2>
-          <p class="lead">Website institucional, sistema web ou infraestrutura: conte-me o que precisa.</p>
+          <h2 class="p-title">O seu pode ser o <em class="hl">sétimo</em>.</h2>
+          <p class="lead">Website, aplicação, dados, automação ou inteligência artificial: conte-me o que precisa.</p>
           <a class="btn btn-amber" href="contacto.html" data-magnet>Falar sobre um projeto <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
         </div>
       </article>
@@ -510,59 +543,106 @@
   </div>
 </dialog>
 
-<dialog class="case" data-lenis-prevent id="case-anga" aria-labelledby="ca-t">
+<dialog class="case" data-lenis-prevent id="case-hortomar" aria-labelledby="ch-t">
   <div class="case-in">
     <header class="case-head">
-      <div><p class="eyebrow">Estudo de caso · Comunidade de e-sports</p><h2 class="case-title" id="ca-t">ANGA</h2><p class="lead">Aliança Nacional de Guildas Angolanas: a comunidade que reúne as guildas de Free Fire de Angola.</p></div>
+      <div><p class="eyebrow">Estudo de caso · Dados, APIs e web scraping</p><h2 class="case-title" id="ch-t">Hortomar</h2><p class="lead">Sistema que consome e organiza dados atualizados do estado do mar de Angola, para integração direta num sistema administrativo de embarcações e pescadores.</p></div>
       <button class="case-x" type="button" data-close aria-label="Fechar estudo de caso">✕</button>
     </header>
-    <div class="case-meta"><div><span>Função</span><b>Fundador, administrador e desenvolvedor</b></div><div><span>Fundação</span><b>22 de março de 2025</b></div><div><span>Comunidade</span><b>1.709 membros · 32 grupos</b></div><div><span>Online</span><b><a href="https://delciocunha.github.io/ANGA/" target="_blank" rel="noopener">delciocunha.github.io/ANGA ↗</a></b></div></div>
+    <div class="case-meta"><div><span>Função</span><b>Desenvolvedor</b></div><div><span>Núcleo</span><b>Python · web scraping</b></div><div><span>Saída</span><b>CSV estruturado</b></div><div><span>Destino</span><b>Sistema de barcos e pescadores</b></div></div>
     <div class="case-sec">
       <h3>Contexto</h3>
-      <p>A ANGA nasceu para ligar as guildas de Free Fire em Angola e promover interação, conhecimento e competitividade. É hoje reconhecida como a maior comunidade do país dedicada a esta modalidade de e-sports. Sou o responsável pela sua criação: fundei a aliança, administro-a e desenvolvi o website, a sua primeira casa digital oficial.</p>
+      <p>Quem trabalha no mar precisa de saber como ele está antes de sair. O Hortomar foi desenhado para ir buscar esses dados de forma automática, trazê-los atualizados e entregá-los já estruturados, prontos para alimentar um sistema administrativo de navios, barcos e pescadores angolanos, sem recolha manual.</p>
     </div>
     <div class="case-sec">
-      <h3>Linha do tempo</h3>
-      <ol class="ag-tl">
-        <li><b>22 mar 2025</b><span>“Hoje nasce a Aliança Nacional de Guildas Angolanas”. O nome começou por ser ONGA e passou a ANGA antes da fundação. Os primeiros membros vieram da guilda ANGOMONARCAS.</span></li>
-        <li><b>set 2025</b><span>Fase de organização: catálogo dos administradores de todas as guildas.</span></li>
-        <li><b>5 jan 2026</b><span>Arranque da Temporada 1 da Liga Aliança, que cresceu até 24 guildas na tabela.</span></li>
-        <li><b>ago 2026</b><span>Programa de Selos de Clientes do Mercado da Aliança.</span></li>
-        <li><b>hoje</b><span>1.709 membros em 32 grupos, e o website como ponto de encontro oficial.</span></li>
-      </ol>
-    </div>
-    <div class="case-sec">
-      <h3>Estrutura do site</h3>
-      <div class="sitemap">
-        <div class="sm-root">Início</div>
-        <div class="sm-kids"><span>Sobre</span><span>Liga <small>rodadas</small></span><span>Guildas</span><span>Mercado <small>verificados</small></span><span>Eventos</span><span>Galeria</span><span>Entrar <small>WhatsApp</small></span></div>
+      <h3>Pipeline de dados</h3>
+      <div class="arch" aria-label="Pipeline: a fonte web é lida por um programa em Python, que normaliza os dados num CSV estruturado; o CSV é validado no Power BI e alimenta o sistema administrativo.">
+        <div class="ar-node"><small>origem</small><b>Fonte web</b><span>tábuas de marés de Luanda</span></div>
+        <div class="ar-link"><span>pedidos HTTP</span></div>
+        <div class="ar-node hl"><small>extração</small><b>Python</b><span>requests · BeautifulSoup</span></div>
+        <div class="ar-link"><span>normalização</span></div>
+        <div class="ar-node"><small>saída</small><b>CSV</b><span>marés · alturas · coeficiente</span></div>
+        <div class="ar-side"><div class="ar-node sm"><b>Power BI</b><span>validação e análise</span></div><div class="ar-node sm"><b>Sistema administrativo</b><span>integração direta</span></div></div>
       </div>
     </div>
     <div class="case-sec">
       <h3>O que construí</h3>
       <div class="feat">
-        <div><b>Liga Aliança</b><span>competição entre 24 guildas, rodada a rodada</span></div>
-        <div><b>Guildas</b><span>cada guilda mantém a sua identidade dentro da aliança</span></div>
-        <div><b>Mercado da Aliança</b><span>diamantes, passes e mais, com vendedores verificados e selos de cliente</span></div>
-        <div><b>Eventos e galeria</b><span>a vida da comunidade num só sítio</span></div>
-        <div><b>Entrada pelo WhatsApp</b><span>salões, grupos de guilda, liga e mercado organizados no WhatsApp</span></div>
-        <div><b>Identidade visual</b><span>preto, dourado e as cores de Angola: “um por todos, todos por Angola”</span></div>
+        <div><b>Web scraping</b><span>leitura do HTML da fonte e extração dos blocos de cada dia</span></div>
+        <div><b>Integração de APIs</b><span>dados consumidos e reunidos numa estrutura única</span></div>
+        <div><b>Quatro marés por dia</b><span>hora e altura em metros, com tratamento dos dias sem a quarta maré</span></div>
+        <div><b>Coeficiente de maré</b><span>valor numérico com classificação baixo, médio ou alto</span></div>
+        <div><b>Saída em CSV</b><span>ficheiro limpo, pronto a importar noutros sistemas</span></div>
+        <div><b>Validação no Power BI</b><span>importação via Power Query para conferir os dados</span></div>
       </div>
     </div>
     <div class="case-sec">
-      <div class="live-head"><h3>Pré-visualização ao vivo</h3>
-        <div class="live-dev" role="group" aria-label="Tamanho do ecrã">
-          <button type="button" class="on" data-w="1280">Computador</button><button type="button" data-w="820">Tablet</button><button type="button" data-w="390">Telemóvel</button>
-        </div></div>
-      <div class="live-stage" data-url="https://delciocunha.github.io/ANGA/"><div class="live-frame"><iframe title="Site da ANGA em funcionamento" loading="lazy" referrerpolicy="no-referrer"></iframe></div><p class="live-load mono">a carregar delciocunha.github.io/ANGA/…</p></div>
-      <p class="case-note">Site real, carregado diretamente do GitHub Pages. Se não aparecer, <a href="https://delciocunha.github.io/ANGA/" target="_blank" rel="noopener">abra-o numa nova janela ↗</a>.</p>
+      <h3>Capturas do projeto</h3>
+      <div class="case-shots">
+        <figure><img src="assets/img/projetos/hortomar-fonte.jpg" alt="Página de marés de Luanda inspecionada no browser" width="1105" height="595" loading="lazy"><figcaption>1 · A fonte: estrutura HTML da tábua de marés</figcaption></figure>
+        <figure><img src="assets/img/projetos/hortomar-codigo.jpg" alt="Código Python de extração com BeautifulSoup" width="1280" height="720" loading="lazy"><figcaption>2 · O código de extração em Python</figcaption></figure>
+        <figure><img src="assets/img/projetos/hortomar-consola.jpg" alt="Saída na consola com as marés de cada dia" width="1200" height="536" loading="lazy"><figcaption>3 · Resultado na consola: marés por dia</figcaption></figure>
+        <figure><img src="assets/img/projetos/hortomar-csv.jpg" alt="Ficheiro dados.csv aberto no PyCharm" width="1280" height="720" loading="lazy"><figcaption>4 · Os dados estruturados em CSV</figcaption></figure>
+        <figure><img src="assets/img/projetos/hortomar-powerquery.jpg" alt="CSV importado no Power Query" width="1280" height="688" loading="lazy"><figcaption>5 · Importação no Power BI (Power Query)</figcaption></figure>
+      </div>
     </div>
-    <div class="case-sec"><h3>Competências em jogo</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Design responsivo</span><span class="chip">Gestão de comunidades</span><span class="chip">Organização de eventos</span><span class="chip">GitHub Pages</span></div></div>
+    <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">Python</span><span class="chip">Web scraping</span><span class="chip">BeautifulSoup</span><span class="chip">Integração de APIs</span><span class="chip">HTTP</span><span class="chip">CSV</span><span class="chip">Power BI</span><span class="chip">PyCharm</span></div></div>
+  </div>
+</dialog>
+
+<dialog class="case" data-lenis-prevent id="case-adana" aria-labelledby="cad-t">
+  <div class="case-in">
+    <header class="case-head">
+      <div><p class="eyebrow">Estudo de caso · Assistente virtual por voz</p><h2 class="case-title" id="cad-t">ADANA</h2><p class="lead">Uma assistente virtual capaz de executar inúmeras tarefas no computador e na internet, controlada por comandos de voz.</p></div>
+      <button class="case-x" type="button" data-close aria-label="Fechar estudo de caso">✕</button>
+    </header>
+    <div class="case-meta"><div><span>Função</span><b>Criador e desenvolvedor</b></div><div><span>Ano</span><b>2021</b></div><div><span>Linguagem</span><b>Python</b></div><div><span>Interação</span><b>Comandos de voz</b></div></div>
+    <div class="case-sec">
+      <h3>Contexto</h3>
+      <p>A ADANA nasceu em 2021 como um projeto de automação: uma assistente que o utilizador comanda só com a voz. Executa tarefas dentro do sistema do computador, consulta dados na internet através de APIs e organiza o dia a dia, tudo sem tocar no teclado.</p>
+    </div>
+    <div class="case-sec">
+      <h3>Como funciona</h3>
+      <div class="arch" aria-label="Fluxo: o utilizador fala, a ADANA interpreta o comando em Python, executa a ação no computador, nas APIs ou na agenda e responde ao utilizador.">
+        <div class="ar-node"><small>entrada</small><b>Voz</b><span>comando falado</span></div>
+        <div class="ar-link"><span>interpretação</span></div>
+        <div class="ar-node hl"><small>núcleo</small><b>Python</b><span>reconhece e decide a ação</span></div>
+        <div class="ar-link"><span>execução</span></div>
+        <div class="ar-node"><small>ação</small><b>Sistema · APIs · agenda</b><span>resposta ao utilizador</span></div>
+        <div class="ar-side"><div class="ar-node sm"><b>Notificações</b><span>avisos do Windows</span></div><div class="ar-node sm"><b>Site</b><span>página de apresentação</span></div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>O que a ADANA faz</h3>
+      <div class="feat">
+        <div><b>Digitação por voz</b><span>o utilizador fala e a ADANA escreve</span></div>
+        <div><b>Pastas e ficheiros</b><span>cria pastas e abre locais como Downloads e Fotografias</span></div>
+        <div><b>Janelas e aplicações</b><span>abre e fecha janelas e programas por voz</span></div>
+        <div><b>Navegação na internet</b><span>pesquisa e abre páginas por comando de voz</span></div>
+        <div><b>Clima e notícias</b><span>APIs para ler o tempo e analisar notícias</span></div>
+        <div><b>YouTube, Google Maps, Facebook e Instagram</b><span>APIs de dados e informações das plataformas</span></div>
+        <div><b>Tarefas e reuniões</b><span>registo e lembretes agendados</span></div>
+        <div><b>Pesquisa e notificações</b><span>resultados, por exemplo da Wikipedia, entregues como notificação</span></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>Capturas do projeto</h3>
+      <div class="case-shots">
+        <figure><img src="assets/img/projetos/adana-ola.jpg" alt="Ecrã de boas-vindas ADANA diz Olá" width="1075" height="548" loading="lazy"><figcaption>Ecrã de boas-vindas</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-site.jpg" alt="Página de apresentação da ADANA" width="1075" height="541" loading="lazy"><figcaption>Página de apresentação</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-agenda.jpg" alt="Janela de agendamento de notificações" width="1280" height="720" loading="lazy"><figcaption>Agendamento de notificações</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-aviso.jpg" alt="Aviso de lembrete agendado" width="1280" height="720" loading="lazy"><figcaption>Lembrete agendado</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-wikipedia.jpg" alt="Notificação do Windows com resposta da Wikipedia" width="1280" height="960" loading="lazy"><figcaption>Resposta entregue como notificação</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-pastas.jpg" alt="Código com comandos de voz para localizar pastas" width="1053" height="625" loading="lazy"><figcaption>Comandos para localizar pastas, em Python</figcaption></figure>
+        <figure><img src="assets/img/projetos/adana-logo.jpg" alt="Logótipo da ADANA" width="451" height="447" loading="lazy"><figcaption>Marca ADANA</figcaption></figure>
+      </div>
+    </div>
+    <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">Python</span><span class="chip">Reconhecimento de voz</span><span class="chip">Automação de tarefas</span><span class="chip">APIs REST</span><span class="chip">YouTube</span><span class="chip">Google Maps</span><span class="chip">Facebook e Instagram</span><span class="chip">Notificações do Windows</span><span class="chip">PyCharm</span></div></div>
   </div>
 </dialog>
 
 </main>
-<a class="next-page" href="contacto.html" data-cursor="abrir"><div class="wrap"><div><small>Próxima página</small><b>Contacto</b></div><span class="arrowbox"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></div></a>
+<a class="next-page" href="contacto.html"><div class="wrap"><div><small>Próxima página</small><b>Contacto</b></div><span class="arrowbox"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></div></a>
 <footer class="site-foot">
   <div class="wrap">
     <span>© 2026 Délcio Cunha · Luanda, Angola</span>

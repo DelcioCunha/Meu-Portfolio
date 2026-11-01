@@ -118,7 +118,7 @@
 
   /* ---------- vCard ---------- */
   $('#vcard').addEventListener('click', () => {
-    const v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Cunha;Délcio;;;', 'FN:Délcio Cunha', 'TITLE:Técnico de Infraestrutura de TI & Desenvolvedor Web',
+    const v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Cunha;Délcio;;;', 'FN:Délcio Cunha', 'TITLE:Técnico de TI & Desenvolvedor Full Stack',
       `TEL;TYPE=CELL:${CONTACT.phone}`, `EMAIL;TYPE=INTERNET:${CONTACT.email}`, 'ADR;TYPE=WORK:;;Av. Marien Ngouabi, Maianga;Luanda;;;Angola', 'END:VCARD'].join('\r\n');
     const url = URL.createObjectURL(new Blob([v], { type: 'text/vcard;charset=utf-8' }));
     const a = document.createElement('a'); a.href = url; a.download = 'Delcio-Cunha.vcf'; document.body.appendChild(a); a.click(); a.remove();

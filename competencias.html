@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Competências · Délcio Cunha</title>
-<meta name="description" content="Stack técnica de Délcio Cunha: infraestrutura, redes e segurança, monitorização, back-end, front-end. Explore o grafo e o terminal.">
+<meta name="description" content="Stack técnica de Délcio Cunha: inteligência artificial, desenvolvimento web e mobile, bases de dados, ferramentas, sistemas e redes, conteúdo. Explore o grafo e o terminal.">
 <meta name="author" content="Délcio Cunha">
 <meta name="theme-color" content="#0A0F16">
 <meta name="color-scheme" content="dark">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Délcio Cunha · Portfólio">
 <meta property="og:title" content="Competências · Délcio Cunha">
-<meta property="og:description" content="Stack técnica de Délcio Cunha: infraestrutura, redes e segurança, monitorização, back-end, front-end. Explore o grafo e o terminal.">
+<meta property="og:description" content="Stack técnica de Délcio Cunha: inteligência artificial, desenvolvimento web e mobile, bases de dados, ferramentas, sistemas e redes, conteúdo. Explore o grafo e o terminal.">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -55,7 +55,7 @@
   <nav class="crumbs" aria-label="Localização"><a href="index.html">~</a><span>/</span><span>competencias</span></nav>
   <p class="eyebrow" data-intro>Competências técnicas</p>
   <h1 class="display">O meu <em>rack</em> de ferramentas.</h1>
-  <p class="lead" data-intro>As 27 competências técnicas do currículo, ligadas aos sítios onde as usei. Explore o grafo, abra as unidades do rack ou use o terminal.</p>
+  <p class="lead" data-intro>As 42 competências técnicas, de inteligência artificial e desenvolvimento a dados, ferramentas, sistemas e conteúdo, ligadas aos sítios onde as usei. Explore o grafo, abra as unidades do rack ou use o terminal.</p>
   <span class="page-index" aria-hidden="true">03</span>
 </header>
 
@@ -68,12 +68,12 @@
     <div class="graph card" data-reveal>
       <div class="graph-filters" role="group" aria-label="Filtrar por área" id="filters">
         <button type="button" class="flt" aria-pressed="true" data-cat="all">Todas</button>
+        <button type="button" class="flt" aria-pressed="false" data-cat="ia"><i style="--c:#B48CFF"></i>IA</button>
+        <button type="button" class="flt" aria-pressed="false" data-cat="dev"><i style="--c:#7CC4FF"></i>Desenvolvimento</button>
+        <button type="button" class="flt" aria-pressed="false" data-cat="dados"><i style="--c:#43D68C"></i>Dados</button>
+        <button type="button" class="flt" aria-pressed="false" data-cat="ferr"><i style="--c:#F06A5F"></i>Ferramentas</button>
         <button type="button" class="flt" aria-pressed="false" data-cat="infra"><i style="--c:#45A8F7"></i>Infraestrutura</button>
-        <button type="button" class="flt" aria-pressed="false" data-cat="redes"><i style="--c:#F06A5F"></i>Redes e segurança</button>
-        <button type="button" class="flt" aria-pressed="false" data-cat="monit"><i style="--c:#43D68C"></i>Monitorização</button>
-        <button type="button" class="flt" aria-pressed="false" data-cat="back"><i style="--c:#B48CFF"></i>Back-end e dados</button>
-        <button type="button" class="flt" aria-pressed="false" data-cat="front"><i style="--c:#7CC4FF"></i>Front-end</button>
-        <button type="button" class="flt" aria-pressed="false" data-cat="outras"><i style="--c:#8B9BB0"></i>Outras</button>
+        <button type="button" class="flt" aria-pressed="false" data-cat="conteudo"><i style="--c:#8B9BB0"></i>Conteúdo</button>
       </div>
       <div class="graph-body">
         <div class="graph-canvas" id="graphWrap"><canvas id="graph" aria-label="Grafo de competências ligadas a projetos e experiência"></canvas>
@@ -82,7 +82,7 @@
         <aside class="graph-info" id="graphInfo" aria-live="polite">
           <span class="gi-tag">dica</span>
           <h3 class="h3">Passe o rato por um nó</h3>
-          <p>Os hexágonos âmbar são os sítios onde trabalhei. As ligações mostram que competências usei em cada um.</p>
+          <p>Os hexágonos âmbar são os projetos e funções onde trabalhei. As ligações mostram que competências usei em cada um.</p>
         </aside>
       </div>
       <details class="graph-list">
@@ -105,11 +105,11 @@
         <div class="rack-ears" aria-hidden="true"><i></i><i></i></div>
       </div>
       <div class="term" id="term" data-reveal>
-        <div class="term-bar"><i></i><i></i><i></i><span>delcio@itel-lab: ~</span><button type="button" class="term-max" id="termMax" aria-label="Expandir terminal">⤢</button></div>
+        <div class="term-bar"><i></i><i></i><i></i><span>delcio@portfolio: ~</span><button type="button" class="term-max" id="termMax" aria-label="Expandir terminal">⤢</button></div>
         <div class="term-out" id="termOut" role="log" aria-live="polite"></div>
         <div class="quick" id="quick" aria-label="Comandos rápidos"></div>
         <form class="term-in" id="termForm" autocomplete="off">
-          <label for="termInput">delcio@<b>itel-lab</b>:~$</label>
+          <label for="termInput">delcio@<b>portfolio</b>:~$</label>
           <input id="termInput" type="text" spellcheck="false" autocapitalize="off" placeholder="escreva help">
         </form>
       </div>
@@ -118,7 +118,7 @@
 </section>
 
 </main>
-<a class="next-page" href="projetos.html" data-cursor="abrir"><div class="wrap"><div><small>Próxima página</small><b>Projetos</b></div><span class="arrowbox"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></div></a>
+<a class="next-page" href="projetos.html"><div class="wrap"><div><small>Próxima página</small><b>Projetos</b></div><span class="arrowbox"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></div></a>
 <footer class="site-foot">
   <div class="wrap">
     <span>© 2026 Délcio Cunha · Luanda, Angola</span>
