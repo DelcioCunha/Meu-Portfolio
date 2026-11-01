@@ -1,0 +1,842 @@
+<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Délcio Cunha · Portfólio</title>
+<meta name="description" content="Portfólio de Délcio Cunha, Técnico de Infraestrutura de TI e Desenvolvedor Web em Luanda, Angola.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<style>
+/* Layout: consola de infraestrutura dividida em subpáginas — uma responsabilidade por ecrã, hexágono do CV como assinatura */
+:root{
+  --ink:#0A0F16; --ink-2:#0F1620; --panel:#121B27;
+  --line:#1F2B3B; --line-2:#2A3A4F;
+  --fg:#E7EEF6; --muted:#8B9BB0; --dim:#5C6B80;
+  --signal:#45A8F7; --signal-2:#7CC4FF; --amber:#F4B64A; --ok:#43D68C;
+  --signal-soft:rgba(69,168,247,.12); --amber-soft:rgba(244,182,74,.12);
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,48px); --max:1140px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--signal);color:var(--ink)}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.hexclip{clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+
+/* cursor */
+.cursor,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate3d(-100px,-100px,0)}
+.cursor{width:6px;height:6px;background:var(--amber);margin:-3px 0 0 -3px}
+.cursor-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(124,196,255,.45);transition:width .25s,height .25s,margin .25s,background .25s,border-color .25s}
+.cursor-ring.hover{width:54px;height:54px;margin:-27px 0 0 -27px;background:rgba(69,168,247,.10);border-color:var(--signal)}
+@media (hover:hover) and (pointer:fine){body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}}
+@media (hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none}}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(10,15,22,.8);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:12px var(--gutter);display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 15px/1 var(--f-display)}
+.hex{width:32px;height:36px;background:var(--signal);display:grid;place-items:center;color:var(--ink);font:800 12px/1 var(--f-display)}
+.nav-links{display:flex;gap:2px;margin:0 0 0 auto;list-style:none;padding:0}
+.nav-links a{display:block;text-decoration:none;font:500 13px/1 var(--f-mono);color:var(--muted);padding:9px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--fg)}
+.nav-links a[aria-current="page"]{color:var(--fg);background:var(--signal-soft)}
+.clock{font:400 12px/1 var(--f-mono);color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.led{width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(67,214,140,.5)}70%{box-shadow:0 0 0 8px rgba(67,214,140,0)}100%{box-shadow:0 0 0 0 rgba(67,214,140,0)}}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 12px;font:500 12px/1 var(--f-mono);cursor:pointer}
+@media (max-width:960px){
+  .nav-links{position:fixed;inset:62px 16px auto 16px;flex-direction:column;background:var(--panel);border:1px solid var(--line-2);border-radius:16px;padding:8px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:.25s}
+  .nav-links.open{opacity:1;pointer-events:auto;transform:none}
+  .nav-links a{font-size:15px;padding:14px;border-radius:10px}
+  .menu-btn{display:block}
+  .clock{display:none}
+}
+
+/* views */
+main{min-height:100vh}
+.view{padding-top:calc(64px + env(safe-area-inset-top,0px))}
+.view.enter .st{animation:in .6s cubic-bezier(.2,.8,.2,1) backwards}
+.view.enter .st:nth-child(2){animation-delay:.06s}.view.enter .st:nth-child(3){animation-delay:.12s}.view.enter .st:nth-child(4){animation-delay:.18s}.view.enter .st:nth-child(5){animation-delay:.24s}
+@keyframes in{from{opacity:0;transform:translateY(18px)}}
+.view.leave{animation:out .22s ease forwards}
+@keyframes out{to{opacity:0;transform:translateY(-8px)}}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.page{padding-block:clamp(48px,7vw,88px) clamp(40px,6vw,72px)}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--signal-2);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.h2{font:800 clamp(36px,5.6vw,68px)/1 var(--f-display);letter-spacing:-.035em;margin:16px 0 0;text-wrap:balance}
+.h2 em{font-style:normal;color:var(--signal)}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:60ch;margin:18px 0 0}
+.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,5vw,56px)}
+.path{font:400 12px/1 var(--f-mono);color:var(--dim);white-space:nowrap}
+@media (max-width:700px){.path{display:none}}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:clamp(48px,6vw,72px);padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:flex;flex-direction:column;gap:6px;text-decoration:none;padding:12px 4px;min-width:0}
+.pager a span{font:400 11px/1 var(--f-mono);color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+.pager a b{font:600 clamp(18px,2.2vw,24px)/1.1 var(--f-display);letter-spacing:-.02em;transition:color .2s}
+.pager a:hover b{color:var(--signal)}
+.pager a.next{text-align:right;margin-left:auto}
+
+.btn{--mx:0px;--my:0px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:0;cursor:pointer;font:600 15px/1 var(--f-body);padding:15px 22px;border-radius:999px;transform:translate(var(--mx),var(--my));transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .2s}
+.btn-primary{background:var(--signal);color:var(--ink)}
+.btn-primary:hover{background:var(--signal-2)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line-2)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--signal);background:var(--signal-soft)}
+.btn svg{width:16px;height:16px;transition:transform .25s}
+.btn:hover svg{transform:translateX(3px)}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 12.5px/1 var(--f-mono);padding:8px 11px;border-radius:8px;background:var(--ink-2);border:1px solid var(--line);color:var(--fg);white-space:nowrap}
+
+/* ---------- INÍCIO ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:140px;background:linear-gradient(transparent,var(--ink));z-index:-1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(32px,5vw,64px);align-items:center;padding-block:clamp(56px,9vw,112px) clamp(48px,7vw,88px)}
+.tag{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--f-mono);color:var(--muted);padding:9px 14px 9px 10px;border:1px solid var(--line-2);border-radius:999px;background:rgba(18,27,39,.6)}
+.name{font:800 clamp(56px,10vw,140px)/.88 var(--f-display);letter-spacing:-.055em;margin:24px 0 0}
+.name .line{display:block;white-space:nowrap}
+.name .ch{display:inline-block;transition:transform .35s cubic-bezier(.2,.8,.2,1),color .35s}
+.name .ch:hover{transform:translateY(-.07em) rotate(-4deg);color:var(--signal)}
+.name .outline{color:transparent;-webkit-text-stroke:1.5px var(--signal-2)}
+.role{font:600 clamp(15px,1.5vw,18px)/1.4 var(--f-body);margin:24px 0 0}
+.rotator{font:400 clamp(19px,2.2vw,27px)/1.35 var(--f-display);color:var(--muted);margin:10px 0 0;min-height:2.7em}
+.rotator b{color:var(--fg);font-weight:600}
+.caret{display:inline-block;width:.5ch;height:1em;background:var(--amber);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.portrait-wrap{position:relative;justify-self:center;width:min(340px,100%);aspect-ratio:1/1.1;max-width:100%;perspective:900px}
+.portrait{position:absolute;inset:4% 8%;transition:transform .2s ease-out}
+.portrait .frame{position:absolute;inset:0;background:linear-gradient(160deg,var(--signal),#1d4f7a 60%,var(--amber));padding:4px}
+.portrait .frame>div{width:100%;height:100%;overflow:hidden;background:var(--panel)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.ring-svg{position:absolute;inset:-3%;width:106%;height:106%;animation:spin 50s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge{position:absolute;font:500 12px/1 var(--f-mono);padding:9px 12px;border-radius:10px;background:rgba(15,22,32,.9);border:1px solid var(--line-2);display:flex;align-items:center;gap:8px;white-space:nowrap;animation:float 6s ease-in-out infinite}
+.badge i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.badge.b1{top:12%;left:-8%}.badge.b2{bottom:10%;right:-8%;animation-delay:-3s}.badge.b2 i{background:var(--signal)}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.portrait-wrap{order:-1;width:min(240px,66vw)}.badge.b1{left:-18%}.badge.b2{right:-18%}}
+@media (max-width:400px){.badge{font-size:10.5px;padding:7px 9px}}
+
+.map-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px}
+.map-head h2{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0}
+.sitemap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding-bottom:clamp(56px,8vw,96px)}
+.dest{--px:50%;--py:50%;position:relative;display:flex;flex-direction:column;gap:10px;min-height:170px;padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--ink-2);text-decoration:none;overflow:hidden;transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+.dest::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--px) var(--py),rgba(69,168,247,.14),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.dest:hover{border-color:var(--line-2);transform:translateY(-4px)}
+.dest:hover::before{opacity:1}
+.dest .p{font:400 11px/1 var(--f-mono);color:var(--dim)}
+.dest b{font:700 21px/1.1 var(--f-display);letter-spacing:-.02em}
+.dest small{color:var(--muted);font-size:13.5px;line-height:1.45}
+.dest .go{margin-top:auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:background .25s,border-color .25s,color .25s;color:var(--muted)}
+.dest .go svg{width:13px;height:13px}
+.dest:hover .go{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+@media (max-width:1000px){.sitemap{grid-template-columns:repeat(3,minmax(0,1fr))}.sitemap .dest:nth-child(n+4){grid-column:span 1}}
+@media (max-width:1000px) and (min-width:641px){.sitemap{grid-template-columns:repeat(6,minmax(0,1fr))}.sitemap .dest{grid-column:span 2}.sitemap .dest:nth-child(4),.sitemap .dest:nth-child(5){grid-column:span 3}}
+@media (max-width:640px){.sitemap{grid-template-columns:1fr 1fr}.sitemap .dest:last-child{grid-column:1/-1}.dest{min-height:150px}}
+
+/* ---------- SOBRE ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:start}
+.about-text p{font-size:clamp(17px,1.6vw,19px);line-height:1.7;color:var(--muted);margin:0 0 16px;max-width:60ch}
+.about-text strong{color:var(--fg);font-weight:500}
+.focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.stat{background:var(--ink);padding:24px 22px;position:relative;transition:background .3s}
+.stat:hover{background:var(--panel)}
+.stat .num{font:800 clamp(40px,4.4vw,56px)/1 var(--f-display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.stat .lbl{font-size:13.5px;line-height:1.45;color:var(--muted);margin-top:10px}
+.stat .unit{position:absolute;top:16px;right:16px;font:400 10.5px/1 var(--f-mono);color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.sub-h{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:clamp(48px,6vw,72px) 0 18px}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.box{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0}
+.box h3{font:500 11.5px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
+.edu{display:grid;gap:18px}
+.yrs{font:500 12px/1 var(--f-mono);color:var(--signal-2);font-variant-numeric:tabular-nums}
+.edu h4{font:700 19px/1.2 var(--f-display);letter-spacing:-.02em;margin:8px 0 4px}
+.edu p{margin:0;color:var(--muted);font-size:14.5px}
+.lang{display:grid;gap:18px}
+.lang .top{display:flex;justify-content:space-between;font-weight:500}
+.lang .top span{font:400 12px/1.6 var(--f-mono);color:var(--muted)}
+.bar{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:9px}
+.bar i{height:6px;border-radius:3px;background:var(--line)}
+.bar i.on{background:var(--signal)}
+.soft{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.soft li{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:10px;font-size:15px;transition:background .2s,transform .2s}
+.soft li:hover{background:var(--panel);transform:translateX(4px)}
+.soft li::before{content:"";flex:none;width:9px;height:10px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--amber)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}.trio{grid-template-columns:1fr 1fr}.trio .box:first-child{grid-column:1/-1}}
+@media (max-width:600px){.trio{grid-template-columns:1fr}}
+
+/* ---------- EXPERIÊNCIA ---------- */
+.timeline{position:relative;display:grid;gap:22px}
+.timeline::before{content:"";position:absolute;left:19px;top:12px;bottom:12px;width:1px;background:linear-gradient(var(--signal),var(--line) 70%)}
+.job{display:grid;grid-template-columns:40px minmax(0,1fr);gap:20px}
+.job-node{width:40px;height:44px;background:var(--line-2);display:grid;place-items:center;position:relative;z-index:1}
+.job-node::after{content:"";position:absolute;width:34px;height:38px;clip-path:inherit;background:var(--ink)}
+.job-node b{position:relative;z-index:1;width:10px;height:10px;border-radius:50%;background:var(--signal)}
+.job.alt .job-node b{background:var(--amber)}
+.job-card{background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px);transition:border-color .3s}
+.job-card:hover{border-color:var(--line-2)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;align-items:baseline}
+.job-title{font:700 clamp(21px,2.2vw,26px)/1.15 var(--f-display);letter-spacing:-.02em;margin:0}
+.job-title span{color:var(--muted);font-weight:400}
+.period{font:500 12.5px/1 var(--f-mono);color:var(--signal-2);background:var(--signal-soft);padding:7px 10px;border-radius:7px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.org{color:var(--muted);margin:8px 0 0;font-size:15px}
+.clients{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.clients .chip span{color:var(--dim)}
+.log{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:2px;font:400 14px/1.55 var(--f-mono)}
+.log li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:9px 12px;border-radius:8px;color:#C7D3E1;transition:background .2s}
+.log li:hover{background:var(--panel)}
+.log li::before{content:attr(data-k);color:var(--ok);font-size:11.5px;padding-top:2px}
+.log li.w::before{color:var(--amber)}
+
+/* ---------- COMPETÊNCIAS ---------- */
+.skills-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,28px);align-items:start}
+.rack{background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:12px;display:grid;gap:8px}
+.rack-head{display:flex;justify-content:space-between;padding:6px 8px 8px;font:500 11px/1 var(--f-mono);color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+.unit-row{border:1px solid var(--line);background:var(--ink);border-radius:12px;overflow:hidden;transition:border-color .25s}
+.unit-row.open{border-color:rgba(69,168,247,.45)}
+.unit-btn{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;background:none;border:0;text-align:left;cursor:pointer}
+.unit-btn .u{font:500 10.5px/1 var(--f-mono);color:var(--dim)}
+.unit-btn .t{font:600 15px/1.2 var(--f-body)}
+.leds{display:flex;gap:4px}
+.leds i{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:background .3s}
+.unit-row.open .leds i{background:var(--ok);box-shadow:0 0 6px var(--ok)}
+.unit-row.open .leds i:nth-child(2n){background:var(--signal);box-shadow:0 0 6px var(--signal)}
+.arr{width:14px;height:14px;transition:transform .3s;color:var(--muted)}
+.unit-row.open .arr{transform:rotate(90deg);color:var(--signal)}
+.unit-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.unit-row.open .unit-body{grid-template-rows:1fr}
+.unit-body>div{overflow:hidden}
+.unit-body .chips{display:flex;flex-wrap:wrap;gap:8px;padding:2px 16px 12px}
+.unit-body p{margin:0;padding:0 16px 14px;color:var(--muted);font-size:14px}
+.term{background:#070B10;border:1px solid var(--line-2);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:540px;max-height:80vh}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--ink-2)}
+.term-bar i{width:11px;height:11px;border-radius:50%}
+.term-bar i:nth-child(1){background:#F06A5F}.term-bar i:nth-child(2){background:var(--amber)}.term-bar i:nth-child(3){background:var(--ok)}
+.term-bar span{margin-left:10px;font:400 12px/1 var(--f-mono);color:var(--dim)}
+.term-out{flex:1;overflow-y:auto;padding:18px;font:400 13.5px/1.65 var(--f-mono);color:#C7D3E1;min-width:0}
+.term-out pre{margin:0;font:inherit;white-space:pre-wrap;word-break:break-word}
+.term-out .p{color:var(--ok)}.term-out .p b{color:var(--signal-2);font-weight:400}
+.term-out .c{color:var(--fg)}.term-out .m{color:var(--dim)}.term-out .a{color:var(--amber)}.term-out .s{color:var(--signal-2)}.term-out .g{color:var(--ok)}
+.quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 12px}
+.quick button{font:400 11.5px/1 var(--f-mono);background:var(--ink-2);border:1px solid var(--line);color:var(--muted);padding:7px 10px;border-radius:7px;cursor:pointer;transition:.2s}
+.quick button:hover{color:var(--fg);border-color:var(--signal)}
+.term-in{display:flex;align-items:center;gap:10px;padding:14px 18px;border-top:1px solid var(--line);font:400 13.5px/1 var(--f-mono)}
+.term-in label{color:var(--ok);white-space:nowrap}.term-in label b{color:var(--signal-2);font-weight:400}
+.term-in input{flex:1;min-width:0;background:none;border:0;outline:none;color:var(--fg);font:inherit;caret-color:var(--amber)}
+@media (max-width:900px){.skills-grid{grid-template-columns:1fr}.term{height:440px}}
+
+/* ---------- PROJETOS ---------- */
+.ptabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.ptab{position:relative;text-align:left;background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:16px 18px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:border-color .25s,background .25s;overflow:hidden;min-width:0}
+.ptab b{font:700 19px/1.1 var(--f-display);letter-spacing:-.02em}
+.ptab span{font-size:13px;color:var(--muted);line-height:1.4}
+.ptab small{font:400 11px/1 var(--f-mono);color:var(--dim)}
+.ptab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--signal);transform:scaleX(0);transform-origin:0 50%;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.ptab:hover{border-color:var(--line-2)}
+.ptab[aria-selected="true"]{background:var(--panel);border-color:rgba(69,168,247,.45)}
+.ptab[aria-selected="true"]::after{transform:none}
+@media (max-width:700px){.ptabs{grid-template-columns:1fr}.ptab span{display:none}}
+.proj{--rx:0deg;--ry:0deg;--px:50%;--py:50%;position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,3vw,40px);background:var(--ink-2);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3vw,36px);transform:perspective(1400px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .4s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.proj::before{content:"";position:absolute;inset:0;background:radial-gradient(480px circle at var(--px) var(--py),rgba(69,168,247,.10),transparent 45%);pointer-events:none}
+.proj.swap{animation:in .45s cubic-bezier(.2,.8,.2,1)}
+.proj-info{display:flex;flex-direction:column;min-width:0}
+.kinds{display:flex;gap:8px;flex-wrap:wrap}
+.kinds .k{font:500 11.5px/1 var(--f-mono);padding:7px 10px;border-radius:7px;background:var(--signal-soft);color:var(--signal-2)}
+.kinds .k.a{background:var(--amber-soft);color:var(--amber)}
+.proj h3{font:800 clamp(30px,3.6vw,44px)/1 var(--f-display);letter-spacing:-.035em;margin:18px 0 0}
+.proj .sector{color:var(--muted);margin:10px 0 0;font-size:15px}
+.proj ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.proj li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:12px;color:#C7D3E1;font-size:15px;line-height:1.5}
+.proj li::before{content:"";width:8px;height:9px;margin-top:7px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--signal)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:24px}
+.stack .chip{font-size:11.5px;padding:6px 9px}
+.plink{display:inline-flex;gap:8px;margin-top:18px;font:500 13px/1 var(--f-mono);color:var(--signal-2);text-decoration:none;width:max-content;max-width:100%;border-bottom:1px solid transparent;padding-bottom:3px}
+.plink:hover{border-color:currentColor}
+.shot{position:relative;border-radius:16px;border:1px solid var(--line-2);background:var(--ink);overflow:hidden;min-height:320px;display:flex;flex-direction:column}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--panel)}
+.shot-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.shot-bar span{margin-left:8px;flex:1;min-width:0;font:400 11px/1 var(--f-mono);color:var(--dim);background:var(--ink);border-radius:6px;padding:6px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot-body{flex:1;position:relative;padding:18px;display:flex;flex-direction:column;gap:12px}
+.note{position:absolute;bottom:10px;left:12px;font:400 9.5px/1 var(--f-mono);color:var(--dim)}
+.m-row{display:flex;gap:8px;align-items:center}
+.m-pill{height:8px;border-radius:4px;background:var(--line-2)}
+.m-h{font:800 22px/1.05 var(--f-display);letter-spacing:-.03em;max-width:15ch}
+.m-sub{font:400 11px/1.4 var(--f-mono);color:var(--muted)}
+.m-btn{font:600 10.5px/1 var(--f-body);background:var(--signal);color:var(--ink);padding:7px 10px;border-radius:6px}
+.m-geo{background:radial-gradient(circle at 80% 20%,rgba(69,168,247,.18),transparent 50%),repeating-radial-gradient(circle at 75% 65%,transparent 0 14px,rgba(124,196,255,.10) 14px 15px)}
+.m-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:auto;margin-bottom:14px}
+.m-cards div{background:rgba(18,27,39,.85);border:1px solid var(--line);border-radius:8px;padding:10px;font:500 10px/1.3 var(--f-mono);color:var(--muted)}
+.m-cards div b{display:block;font:700 12px/1.2 var(--f-body);color:var(--fg);margin-bottom:4px}
+.lang-sw{display:inline-flex;border:1px solid var(--line-2);border-radius:6px;overflow:hidden;font:500 10px/1 var(--f-mono)}
+.lang-sw b{padding:5px 7px;font-weight:500;color:var(--muted)}
+.lang-sw b.on{background:var(--signal);color:var(--ink)}
+.m-c3{background:linear-gradient(180deg,rgba(244,182,74,.08),transparent 60%)}
+.drone{position:absolute;right:22px;top:26px;width:120px;height:90px}
+.contours{position:absolute;inset:auto 0 0 0;width:100%;height:55%}
+.wa{position:absolute;right:14px;bottom:30px;font:600 10.5px/1 var(--f-body);background:var(--ok);color:#06210F;padding:8px 11px;border-radius:999px}
+.m-urb{display:grid;grid-template-columns:72px minmax(0,1fr);padding:0}
+.m-side{border-right:1px solid var(--line);padding:14px 10px;display:grid;align-content:start;gap:10px;background:var(--panel)}
+.m-side .m-pill:first-child{background:var(--signal);width:70%}
+.m-main{padding:14px 14px 30px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpis div{border:1px solid var(--line);border-radius:8px;padding:9px;font:400 9.5px/1.2 var(--f-mono);color:var(--muted)}
+.kpis div b{display:block;font:700 17px/1.1 var(--f-display);color:var(--fg);margin-top:4px;font-variant-numeric:tabular-nums}
+.tbl{border:1px solid var(--line);border-radius:8px;overflow:hidden;font:400 10px/1 var(--f-mono)}
+.tbl div{display:grid;grid-template-columns:1.3fr 1fr auto;gap:8px;padding:8px 10px;border-top:1px solid var(--line);color:var(--muted);align-items:center}
+.tbl div:first-child{border-top:0;color:var(--dim);text-transform:uppercase;font-size:9px}
+.s{padding:4px 6px;border-radius:5px;font-size:9px}
+.s.ok{background:rgba(67,214,140,.14);color:var(--ok)}.s.w{background:var(--amber-soft);color:var(--amber)}.s.n{background:var(--signal-soft);color:var(--signal-2)}
+.api{font:400 10px/1.5 var(--f-mono);color:var(--muted);background:#070B10;border:1px solid var(--line);border-radius:8px;padding:9px 10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.api b{color:var(--ok);font-weight:500}
+@media (max-width:900px){.proj{grid-template-columns:1fr}.shot{min-height:270px}}
+@media (max-width:440px){.m-cards{grid-template-columns:1fr 1fr}.m-cards div:nth-child(3){display:none}.m-urb{grid-template-columns:40px minmax(0,1fr)}}
+
+/* ---------- CONTACTO ---------- */
+.contact-card{position:relative;border:1px solid var(--line-2);border-radius:28px;padding:clamp(28px,6vw,72px);background:radial-gradient(700px 400px at 100% 0,rgba(69,168,247,.15),transparent 60%),radial-gradient(500px 300px at 0 100%,rgba(244,182,74,.09),transparent 60%),var(--ink-2);overflow:hidden}
+#hexbg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.contact-card>*:not(canvas){position:relative}
+.big{font:800 clamp(40px,7vw,96px)/.94 var(--f-display);letter-spacing:-.05em;margin:18px 0 0;max-width:12ch;text-wrap:balance}
+.big em{font-style:normal;color:var(--signal)}
+.c-lines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(32px,5vw,52px)}
+.c-item{border:1px solid var(--line-2);border-radius:16px;padding:18px;background:rgba(10,15,22,.65);display:flex;flex-direction:column;gap:10px;min-width:0}
+.c-item .k{font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.c-item .v{font:600 16px/1.35 var(--f-body);word-break:break-word}
+.c-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.mini{font:500 12px/1 var(--f-mono);padding:8px 11px;border-radius:8px;border:1px solid var(--line-2);background:var(--ink);color:var(--fg);cursor:pointer;text-decoration:none;transition:.2s}
+.mini:hover{border-color:var(--signal);color:var(--signal-2)}
+.mini.done{border-color:var(--ok);color:var(--ok)}
+@media (max-width:860px){.c-lines{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:24px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font:400 12px/1.5 var(--f-mono);color:var(--dim)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--fg);color:var(--ink);font:500 13px/1 var(--f-mono);padding:12px 16px;border-radius:10px;transition:.3s;z-index:80;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="#inicio" data-route="inicio" class="logo" data-magnet><span class="hex hexclip">DC</span><span>Délcio Cunha</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" data-route="inicio">início</a></li>
+      <li><a href="#sobre" data-route="sobre">sobre</a></li>
+      <li><a href="#experiencia" data-route="experiencia">experiência</a></li>
+      <li><a href="#competencias" data-route="competencias">competências</a></li>
+      <li><a href="#projetos" data-route="projetos">projetos</a></li>
+      <li><a href="#contacto" data-route="contacto">contacto</a></li>
+    </ul>
+    <div class="clock" title="Hora local em Luanda"><span class="led"></span>Luanda · <span id="clock">--:--</span></div>
+  </div>
+</header>
+
+<main>
+<!-- ============ INÍCIO ============ -->
+<div class="view" data-view="inicio">
+  <section class="hero" aria-label="Apresentação">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag st"><span class="led"></span>Luanda, Angola · Infraestrutura + Web</span>
+        <h1 class="name st" aria-label="Délcio Cunha"><span class="line split">Délcio</span><span class="line split outline">Cunha</span></h1>
+        <p class="role st">Técnico de Infraestrutura de TI &amp; Desenvolvedor Web</p>
+        <p class="rotator st" aria-live="polite"><span id="rot">Configuro <b>ambientes virtualizados</b> com VMware ESXi.</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="cta st">
+          <a href="#projetos" data-route="projetos" class="btn btn-primary" data-magnet>Ver projetos <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+          <a href="#contacto" data-route="contacto" class="btn btn-ghost" data-magnet>Entrar em contacto</a>
+        </div>
+      </div>
+      <div class="portrait-wrap st" id="portraitWrap">
+        <svg class="ring-svg" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="97" fill="none" stroke="rgba(124,196,255,.35)" stroke-width=".5" stroke-dasharray="2 6"/><circle cx="100" cy="3" r="2.2" fill="#F4B64A"/></svg>
+        <div class="portrait" id="portrait"><div class="frame hexclip"><div class="hexclip"><img src="assets/foto.jpg" alt="Retrato de Délcio Cunha"></div></div></div>
+        <span class="badge b1"><i></i>Infraestrutura</span>
+        <span class="badge b2"><i></i>Desenvolvimento web</span>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="map-head"><h2>Explorar o portfólio</h2></div>
+    <nav class="sitemap" aria-label="Páginas do portfólio">
+      <a class="dest" href="#sobre" data-route="sobre"><span class="p">/sobre</span><b>Sobre mim</b><small>Perfil, formação, idiomas e competências pessoais.</small><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+      <a class="dest" href="#experiencia" data-route="experiencia"><span class="p">/experiencia</span><b>Experiência</b><small>Estágio no ITEL e trabalho freelance.</small><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+      <a class="dest" href="#competencias" data-route="competencias"><span class="p">/competencias</span><b>Competências</b><small>Stack técnica e um terminal para explorar.</small><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+      <a class="dest" href="#projetos" data-route="projetos"><span class="p">/projetos</span><b>Projetos</b><small>GEPGEO, C3-Geo e URBANDA.</small><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+      <a class="dest" href="#contacto" data-route="contacto"><span class="p">/contacto</span><b>Contacto</b><small>Email, telefone e WhatsApp.</small><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ SOBRE ============ -->
+<div class="view" data-view="sobre" hidden>
+  <section class="wrap page">
+    <div class="page-head st"><div><span class="eyebrow">Sobre mim</span><h2 class="h2" tabindex="-1">Da sala de servidores ao <em>browser</em> do cliente.</h2></div><span class="path">~/delcio/sobre</span></div>
+    <div class="about-grid st">
+      <div class="about-text">
+        <p>Sou <strong>Técnico de Infraestrutura de TI e Desenvolvedor Web</strong> com experiência prática em administração de sistemas, virtualização com <strong>VMware ESXi</strong>, segurança de rede com <strong>pfSense</strong> e monitorização de servidores com <strong>Zabbix</strong> e <strong>Nagios</strong>.</p>
+        <p>Desenvolvo aplicações e websites completos com <strong>Python/Django, PostgreSQL e JavaScript</strong>, e já entreguei websites institucionais para empresas dos setores de topografia, engenharia e geoespacial.</p>
+        <p>O meu foco é simples: sistemas estáveis, redes seguras e processos automatizados.</p>
+        <div class="focus"><span class="chip">estabilidade</span><span class="chip">segurança</span><span class="chip">automação de processos</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="unit">páginas</span><div class="num" data-count="16">16</div><div class="lbl">publicadas em dois websites institucionais (10 + 6)</div></div>
+        <div class="stat"><span class="unit">sistema</span><div class="num" data-count="1">1</div><div class="lbl">plataforma full stack criada de raiz: URBANDA</div></div>
+        <div class="stat"><span class="unit">ferramentas</span><div class="num" data-count="4">4</div><div class="lbl">de infraestrutura usadas no estágio: ESXi, pfSense, Zabbix, Nagios</div></div>
+        <div class="stat"><span class="unit">idiomas</span><div class="num" data-count="3">3</div><div class="lbl">Português nativo, Inglês e Espanhol intermédios</div></div>
+      </div>
+    </div>
+    <h3 class="sub-h st">Formação, idiomas e competências pessoais</h3>
+    <div class="trio st">
+      <div class="box"><h3>Formação académica</h3><div class="edu">
+        <div><span class="yrs">2019 – 2025</span><h4>Ensino Médio</h4><p>Instituto de Telecomunicações (ITEL) · Luanda</p></div>
+        <div><span class="yrs">2015 – 2018</span><h4>Ensino Secundário (I Ciclo)</h4><p>Escola n.º 1107 do Bairro Azul · Luanda</p></div>
+      </div></div>
+      <div class="box"><h3>Idiomas</h3><div class="lang">
+        <div><div class="top">Português <span>Nativo</span></div><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+        <div><div class="top">Inglês <span>Intermédio</span></div><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+        <div><div class="top">Espanhol <span>Intermédio</span></div><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+      </div></div>
+      <div class="box"><h3>Competências pessoais</h3><ul class="soft">
+        <li>Resolução de problemas técnicos</li><li>Pensamento lógico e analítico</li><li>Trabalho em equipa</li><li>Gestão de tempo e organização</li><li>Aprendizagem rápida e adaptabilidade</li>
+      </ul></div>
+    </div>
+    <nav class="pager"><a href="#inicio" data-route="inicio"><span>← anterior</span><b>Início</b></a><a class="next" href="#experiencia" data-route="experiencia"><span>seguinte →</span><b>Experiência</b></a></nav>
+  </section>
+</div>
+
+<!-- ============ EXPERIÊNCIA ============ -->
+<div class="view" data-view="experiencia" hidden>
+  <section class="wrap page">
+    <div class="page-head st"><div><span class="eyebrow">Experiência profissional</span><h2 class="h2" tabindex="-1">Registo de <em>atividade</em>.</h2><p class="lead">O que fiz, onde e com que ferramentas, no formato de um log de sistema.</p></div><span class="path">/var/log/carreira</span></div>
+    <div class="timeline">
+      <article class="job st">
+        <div class="job-node hexclip"><b></b></div>
+        <div class="job-card">
+          <div class="job-top"><h3 class="job-title">Técnico de Infraestrutura de TI <span>· Estágio Profissional</span></h3><span class="period">2024 – 2025</span></div>
+          <p class="org">Instituto de Telecomunicações (ITEL) · Luanda</p>
+          <ul class="log">
+            <li data-k="[ESXI]">Configurou e geriu ambientes virtualizados com VMware ESXi.</li>
+            <li data-k="[OS]">Instalou e deu suporte a sistemas operativos Windows e Linux.</li>
+            <li data-k="[FW]" class="w">Implementou firewall pfSense e configurou serviços de rede como DNS, controlando segurança e tráfego.</li>
+            <li data-k="[MON]">Monitorizou servidores e serviços de forma contínua com Zabbix e Nagios.</li>
+            <li data-k="[FIX]" class="w">Diagnosticou e resolveu incidentes de hardware, software e rede, garantindo a disponibilidade dos sistemas.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job alt st">
+        <div class="job-node hexclip"><b></b></div>
+        <div class="job-card">
+          <div class="job-top"><h3 class="job-title">Gestor de Redes Sociais <span>· Freelancer</span></h3><span class="period">2022 – 2026</span></div>
+          <div class="clients"><span class="chip">PIXELVERSE <span>· portal de cultura pop</span></span><span class="chip">KUDJIMA <span>· venda de camarão</span></span><span class="chip">ZANIRA <span>· agência de marketing</span></span></div>
+          <ul class="log">
+            <li data-k="[PLAN]">Planeou conteúdos, geriu a comunidade e definiu estratégias de engajamento no Facebook.</li>
+            <li data-k="[DATA]" class="w">Analisou o desempenho das publicações e desenvolveu a identidade visual das páginas.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <nav class="pager"><a href="#sobre" data-route="sobre"><span>← anterior</span><b>Sobre mim</b></a><a class="next" href="#competencias" data-route="competencias"><span>seguinte →</span><b>Competências</b></a></nav>
+  </section>
+</div>
+
+<!-- ============ COMPETÊNCIAS ============ -->
+<div class="view" data-view="competencias" hidden>
+  <section class="wrap page">
+    <div class="page-head st"><div><span class="eyebrow">Competências técnicas</span><h2 class="h2" tabindex="-1">O meu <em>rack</em> de ferramentas.</h2><p class="lead">Abra cada unidade para ver o que está instalado, ou use o terminal: escreva <code style="font-family:var(--f-mono);color:var(--amber)">help</code>.</p></div><span class="path">/etc/stack.conf</span></div>
+    <div class="skills-grid st">
+      <div class="rack" id="rack"><div class="rack-head"><span>rack-01 · 6U</span><span id="rackCount">1/6 ativos</span></div></div>
+      <div class="term" id="term" aria-label="Terminal interativo">
+        <div class="term-bar"><i></i><i></i><i></i><span>delcio@itel-lab: ~</span></div>
+        <div class="term-out" id="termOut" role="log" aria-live="polite"></div>
+        <div class="quick" id="quick"></div>
+        <form class="term-in" id="termForm" autocomplete="off"><label for="termInput">delcio@<b>itel-lab</b>:~$</label><input id="termInput" type="text" spellcheck="false" placeholder="escreva help"></form>
+      </div>
+    </div>
+    <nav class="pager"><a href="#experiencia" data-route="experiencia"><span>← anterior</span><b>Experiência</b></a><a class="next" href="#projetos" data-route="projetos"><span>seguinte →</span><b>Projetos</b></a></nav>
+  </section>
+</div>
+
+<!-- ============ PROJETOS ============ -->
+<div class="view" data-view="projetos" hidden>
+  <section class="wrap page">
+    <div class="page-head st"><div><span class="eyebrow">Projetos</span><h2 class="h2" tabindex="-1">Trabalho <em>entregue</em>.</h2><p class="lead">Escolha um projeto para ver o que foi feito e com que tecnologias.</p></div><span class="path">~/projetos/*</span></div>
+    <div class="ptabs st" role="tablist" aria-label="Projetos">
+      <button class="ptab" role="tab" id="t-gepgeo" aria-selected="true" aria-controls="projPanel" data-p="gepgeo"><small>website institucional</small><b>GEPGEO</b><span>Topografia e geoprocessamento</span></button>
+      <button class="ptab" role="tab" id="t-c3" aria-selected="false" aria-controls="projPanel" data-p="c3"><small>website institucional</small><b>C3-Geo</b><span>Drones, mineração e SIG</span></button>
+      <button class="ptab" role="tab" id="t-urb" aria-selected="false" aria-controls="projPanel" data-p="urb"><small>sistema full stack · 2024–2025</small><b>URBANDA</b><span>Gestão de denúncias urbanas</span></button>
+    </div>
+    <div id="projPanel" role="tabpanel" class="st">
+      <article class="proj" data-proj="gepgeo">
+        <div class="proj-info">
+          <div class="kinds"><span class="k">Website Institucional</span><span class="k a">Desenvolvedor Web</span></div>
+          <h3>GEPGEO Consultoria</h3>
+          <p class="sector">Topografia, geoprocessamento, engenharia civil e formação</p>
+          <ul><li>Website de 10 páginas, com portfólio, produtos, blog e FAQ.</li><li>Versão bilingue PT/EN, pesquisa, carrinho para cursos e mapa 3D interativo.</li><li>SEO com dados estruturados Schema.org, Open Graph e manifesto web (PWA).</li></ul>
+          <a class="plink" href="https://gepgeoconsultoria.co.ao" target="_blank" rel="noopener">gepgeoconsultoria.co.ao ↗</a>
+          <div class="stack"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">i18n</span><span class="chip">Schema.org</span><span class="chip">Responsivo e acessível</span></div>
+        </div>
+        <div class="shot" aria-hidden="true">
+          <div class="shot-bar"><i></i><i></i><i></i><span>gepgeoconsultoria.co.ao</span></div>
+          <div class="shot-body m-geo">
+            <div class="m-row" style="justify-content:space-between"><div class="m-row"><span class="hex hexclip" style="width:18px;height:20px;font-size:7px">G</span><span class="m-pill" style="width:60px"></span></div><span class="lang-sw" id="langSw"><b class="on">PT</b><b>EN</b></span></div>
+            <div class="m-h" id="geoH">Medimos o território com precisão.</div>
+            <div class="m-sub" id="geoS">Topografia · Geoprocessamento · Formação</div>
+            <div class="m-row"><span class="m-btn" id="geoB">Pedir orçamento</span><span class="m-pill" style="width:80px"></span></div>
+            <div class="m-cards"><div><b>Portfólio</b>projetos</div><div><b>Cursos</b>carrinho</div><div><b>Mapa 3D</b>interativo</div></div>
+          </div>
+          <span class="note">ilustração · não é captura real</span>
+        </div>
+      </article>
+      <article class="proj" data-proj="c3" hidden>
+        <div class="proj-info">
+          <div class="kinds"><span class="k">Website Institucional</span><span class="k a">Desenvolvedor Web</span></div>
+          <h3>C3-Geo</h3>
+          <p class="sector">Engenharia de dados geoespaciais: drones, mineração e SIG</p>
+          <ul><li>Website de 6 páginas, com serviços, formação e estudos de caso.</li><li>Ilustrações SVG, menu móvel e animações ao rolar a página.</li><li>Pedidos de orçamento integrados com WhatsApp Business.</li></ul>
+          <div class="stack"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">SVG</span><span class="chip">Responsivo</span></div>
+        </div>
+        <div class="shot" aria-hidden="true">
+          <div class="shot-bar"><i></i><i></i><i></i><span>c3-geo · início</span></div>
+          <div class="shot-body m-c3">
+            <div class="m-row"><span class="m-pill" style="width:44px;background:var(--amber)"></span><span class="m-pill" style="width:30px"></span><span class="m-pill" style="width:30px"></span></div>
+            <div class="m-h" style="max-width:11ch">Dados geoespaciais do céu ao subsolo.</div>
+            <div class="m-sub">Drones · Mineração · SIG</div>
+            <div class="drone"><svg viewBox="0 0 120 90" fill="none" width="100%" height="100%"><g>
+              <line x1="30" y1="30" x2="90" y2="30" stroke="#8B9BB0" stroke-width="2"/>
+              <ellipse cx="30" cy="26" rx="16" ry="3" fill="rgba(124,196,255,.35)"><animate attributeName="rx" values="16;6;16" dur=".2s" repeatCount="indefinite"/></ellipse>
+              <ellipse cx="90" cy="26" rx="16" ry="3" fill="rgba(124,196,255,.35)"><animate attributeName="rx" values="6;16;6" dur=".2s" repeatCount="indefinite"/></ellipse>
+              <rect x="48" y="27" width="24" height="12" rx="4" fill="#F4B64A"/>
+              <path d="M52 39 L40 86 L80 86 L68 39Z" fill="rgba(244,182,74,.12)"/>
+              <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="3s" repeatCount="indefinite"/></g></svg></div>
+            <svg class="contours" viewBox="0 0 400 160" preserveAspectRatio="none" fill="none" stroke="rgba(244,182,74,.35)" stroke-width="1"><path d="M0 120 C80 90 140 140 220 100 S340 70 400 96"/><path d="M0 136 C90 110 150 155 230 118 S340 92 400 116"/><path d="M0 150 C100 132 160 165 240 136 S350 116 400 136"/><path d="M40 100 C110 70 160 110 230 80 S330 50 380 70" stroke="rgba(124,196,255,.3)"/></svg>
+            <span class="wa">● Pedir orçamento via WhatsApp</span>
+          </div>
+          <span class="note">ilustração · não é captura real</span>
+        </div>
+      </article>
+      <article class="proj" data-proj="urb" hidden>
+        <div class="proj-info">
+          <div class="kinds"><span class="k">Sistema full stack</span><span class="k a">Criador e principal desenvolvedor</span></div>
+          <h3>URBANDA</h3>
+          <p class="sector">Sistema de Gestão de Denúncias Urbanas · 2024 – 2025</p>
+          <ul><li>Back-end em Django com base de dados PostgreSQL.</li><li>Autenticação, gestão de utilizadores, acompanhamento de denúncias e painel administrativo.</li><li>APIs documentadas e testadas com Postman, integrando front-end e back-end.</li></ul>
+          <div class="stack"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">PostgreSQL</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Postman</span></div>
+        </div>
+        <div class="shot" aria-hidden="true">
+          <div class="shot-bar"><i></i><i></i><i></i><span>urbanda · painel administrativo</span></div>
+          <div class="shot-body m-urb">
+            <div class="m-side"><span class="m-pill"></span><span class="m-pill"></span><span class="m-pill" style="width:80%"></span><span class="m-pill" style="width:60%"></span></div>
+            <div class="m-main">
+              <div class="kpis"><div>novas<b id="k1">12</b></div><div>em análise<b id="k2">7</b></div><div>resolvidas<b id="k3">38</b></div></div>
+              <div class="tbl"><div><span>denúncia</span><span>bairro</span><span>estado</span></div><div><span>Iluminação pública</span><span>Maianga</span><span class="s w">análise</span></div><div><span>Recolha de lixo</span><span>Bairro Azul</span><span class="s ok">resolvida</span></div><div><span>Buraco na via</span><span>Ingombota</span><span class="s n">nova</span></div></div>
+              <div class="api"><b>GET</b> /api/denuncias/?estado=analise → 200 OK</div>
+            </div>
+          </div>
+          <span class="note">ilustração · dados de exemplo</span>
+        </div>
+      </article>
+    </div>
+    <nav class="pager"><a href="#competencias" data-route="competencias"><span>← anterior</span><b>Competências</b></a><a class="next" href="#contacto" data-route="contacto"><span>seguinte →</span><b>Contacto</b></a></nav>
+  </section>
+</div>
+
+<!-- ============ CONTACTO ============ -->
+<div class="view" data-view="contacto" hidden>
+  <section class="wrap page">
+    <div class="contact-card st" id="contactCard">
+      <canvas id="hexbg" aria-hidden="true"></canvas>
+      <span class="eyebrow">Contacto</span>
+      <h2 class="big" tabindex="-1">Vamos construir algo <em>estável</em>.</h2>
+      <p class="lead">Infraestrutura, redes, monitorização ou um website novo: fale comigo e respondo com uma proposta clara.</p>
+      <div class="c-lines">
+        <div class="c-item"><span class="k">Email</span><span class="v">delciobentocunha007@gmail.com</span><div class="c-actions"><button class="mini" data-copy="delciobentocunha007@gmail.com">Copiar</button><a class="mini" href="mailto:delciobentocunha007@gmail.com">Abrir email</a></div></div>
+        <div class="c-item"><span class="k">Telefone · WhatsApp</span><span class="v">+244 947 976 103</span><div class="c-actions"><button class="mini" data-copy="+244947976103">Copiar</button><a class="mini" href="https://wa.me/244947976103" target="_blank" rel="noopener">WhatsApp ↗</a></div></div>
+        <div class="c-item"><span class="k">Localização</span><span class="v">Av. Marien Ngouabi, Maianga — Luanda, Angola</span><div class="c-actions"><a class="mini" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Marien+Ngouabi,+Maianga,+Luanda" target="_blank" rel="noopener">Ver no mapa ↗</a></div></div>
+      </div>
+    </div>
+    <nav class="pager"><a href="#projetos" data-route="projetos"><span>← anterior</span><b>Projetos</b></a><a class="next" href="#inicio" data-route="inicio"><span>voltar ao →</span><b>Início</b></a></nav>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Délcio Cunha · Técnico de Infraestrutura de TI &amp; Desenvolvedor Web</span><span>status: <span style="color:var(--ok)">todos os serviços operacionais</span></span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+/* split name */
+$$('.split').forEach(el => { const t = el.textContent; el.textContent = ''; [...t].forEach(c => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; s.setAttribute('aria-hidden','true'); el.appendChild(s); }); });
+
+/* cursor */
+const dot = $('.cursor'), ring = $('.cursor-ring');
+let mx=-100,my=-100,rx=-100,ry=-100;
+if (fine) {
+  document.body.classList.add('has-cursor');
+  addEventListener('pointermove', e => { mx=e.clientX; my=e.clientY; dot.style.transform=`translate3d(${mx}px,${my}px,0)`; }, {passive:true});
+  (function loop(){ rx+=(mx-rx)*.2; ry+=(my-ry)*.2; ring.style.transform=`translate3d(${rx}px,${ry}px,0)`; requestAnimationFrame(loop); })();
+  document.addEventListener('pointerover', e => ring.classList.toggle('hover', !!e.target.closest('a,button,input,.unit-btn')));
+}
+if (fine && !reduce) $$('[data-magnet]').forEach(b => {
+  b.addEventListener('pointermove', e => { const r=b.getBoundingClientRect(); b.style.setProperty('--mx',((e.clientX-r.left-r.width/2)*.22)+'px'); b.style.setProperty('--my',((e.clientY-r.top-r.height/2)*.3)+'px'); });
+  b.addEventListener('pointerleave', () => { b.style.setProperty('--mx','0px'); b.style.setProperty('--my','0px'); });
+});
+
+/* clock */
+const clk = $('#clock');
+const tick = () => { try { clk.textContent = new Intl.DateTimeFormat('pt-PT',{timeZone:'Africa/Luanda',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date()); } catch(e){} };
+tick(); setInterval(tick, 15000);
+
+/* ================= ROUTER ================= */
+const ROUTES = ['inicio','sobre','experiencia','competencias','projetos','contacto'];
+const TITLES = {inicio:'Início',sobre:'Sobre mim',experiencia:'Experiência',competencias:'Competências',projetos:'Projetos',contacto:'Contacto'};
+const views = Object.fromEntries($$('.view').map(v => [v.dataset.view, v]));
+const navA = $$('.nav-links a');
+const menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
+let current = null, busy = false;
+const hooks = {};
+async function go(route, opts={}){
+  if (!ROUTES.includes(route)) route = 'inicio';
+  if (route === current || busy) return;
+  busy = true;
+  const prev = current ? views[current] : null;
+  if (prev && !reduce) { prev.classList.add('leave'); await wait(200); }
+  if (prev) { prev.classList.remove('leave','enter'); prev.hidden = true; hooks[current+':leave']?.(); }
+  current = route;
+  const v = views[route]; v.hidden = false;
+  window.scrollTo(0,0);
+  if (!reduce) { v.classList.remove('enter'); void v.offsetWidth; v.classList.add('enter'); }
+  navA.forEach(a => a.dataset.route === route ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  document.title = route === 'inicio' ? 'Délcio Cunha · Portfólio' : `${TITLES[route]} · Délcio Cunha`;
+  if (opts.push) { try { history.pushState({route}, '', '#'+route); } catch(e){} }
+  if (opts.focus) { const h = v.querySelector('[tabindex="-1"]'); h && h.focus({preventScroll:true}); }
+  hooks[route+':enter']?.();
+  busy = false;
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-route]'); if (!a) return;
+  e.preventDefault();
+  navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='menu';
+  go(a.dataset.route, {push:true, focus:true});
+});
+addEventListener('popstate', () => go((location.hash||'').slice(1)));
+addEventListener('hashchange', () => go((location.hash||'').slice(1)));
+menuBtn.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o); menuBtn.textContent = o ? 'fechar' : 'menu'; });
+
+/* ================= INÍCIO ================= */
+const phrases = ['Configuro <b>ambientes virtualizados</b> com VMware ESXi.','Protejo redes com <b>firewall pfSense</b> e DNS.','Monitorizo servidores com <b>Zabbix e Nagios</b>.','Construo back-ends em <b>Django e PostgreSQL</b>.','Desenho <b>websites rápidos</b>, bilingues e otimizados para SEO.'];
+const rot = $('#rot');
+if (!reduce) (async () => {
+  let pi = 0; const strip = h => h.replace(/<[^>]+>/g,'');
+  await wait(2800);
+  for(;;){
+    let t = strip(phrases[pi]);
+    for (let i=t.length;i>=0;i--){ rot.textContent=t.slice(0,i); await wait(13); }
+    pi=(pi+1)%phrases.length; t=strip(phrases[pi]);
+    for (let i=0;i<=t.length;i++){ rot.textContent=t.slice(0,i); await wait(30); }
+    rot.innerHTML = phrases[pi]; await wait(2600);
+  }
+})();
+const pw = $('#portraitWrap'), pt = $('#portrait');
+if (fine && !reduce) {
+  pw.addEventListener('pointermove', e => { const r=pw.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; pt.style.transform=`rotateY(${x*16}deg) rotateX(${-y*16}deg)`; });
+  pw.addEventListener('pointerleave', () => pt.style.transform='');
+}
+$$('.dest').forEach(d => d.addEventListener('pointermove', e => { const r=d.getBoundingClientRect(); d.style.setProperty('--px',(e.clientX-r.left)+'px'); d.style.setProperty('--py',(e.clientY-r.top)+'px'); }));
+
+/* network canvas (só corre na página inicial) */
+const cv = $('#net'), cx = cv.getContext('2d');
+let W=0,H=0,nodes=[],packets=[],pulses=[],running=false;
+const mouse={x:-9999,y:-9999};
+const labels=['esxi-01','esxi-02','pfsense','dns','zabbix','nagios','web-01','db-pg','api','gw'];
+function resize(){
+  const r=cv.getBoundingClientRect(); if(!r.width) return;
+  const d=Math.min(devicePixelRatio||1,2); W=r.width; H=r.height; cv.width=W*d; cv.height=H*d; cx.setTransform(d,0,0,d,0,0);
+  const n=Math.round(Math.min(70,Math.max(24,W*H/18000)));
+  nodes=Array.from({length:n},(_,i)=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:i<labels.length?3:1.5+Math.random(),label:i<labels.length?labels[i]:null}));
+  packets=[];
+}
+function frame(){
+  if (!running) return;
+  cx.clearRect(0,0,W,H);
+  for (const n of nodes){ n.x+=n.vx; n.y+=n.vy; if(n.x<0||n.x>W)n.vx*=-1; if(n.y<0||n.y>H)n.vy*=-1;
+    const dx=n.x-mouse.x,dy=n.y-mouse.y,d=Math.hypot(dx,dy); if(d<110&&d>0){n.x+=dx/d*.5;n.y+=dy/d*.5;}
+    n.vx*=.999; n.vy*=.999; }
+  const edges=[];
+  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y); if(d<130){edges.push([a,b]); cx.strokeStyle=`rgba(124,196,255,${(1-d/130)*.18})`; cx.lineWidth=1; cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(b.x,b.y); cx.stroke();}}
+  for(const n of nodes){const d=Math.hypot(n.x-mouse.x,n.y-mouse.y); if(d<180){cx.strokeStyle=`rgba(244,182,74,${(1-d/180)*.45})`; cx.beginPath(); cx.moveTo(n.x,n.y); cx.lineTo(mouse.x,mouse.y); cx.stroke();}}
+  if(edges.length&&packets.length<16&&Math.random()<.15){const e=edges[Math.floor(Math.random()*edges.length)]; packets.push({a:e[0],b:e[1],t:0,s:.012+Math.random()*.02,c:Math.random()<.25?'#F4B64A':'#43D68C'});}
+  packets=packets.filter(p=>p.t<=1);
+  for(const p of packets){p.t+=p.s; const x=p.a.x+(p.b.x-p.a.x)*p.t,y=p.a.y+(p.b.y-p.a.y)*p.t; cx.fillStyle=p.c; cx.beginPath(); cx.arc(x,y,1.8,0,7); cx.fill();}
+  cx.font='10px "JetBrains Mono", monospace';
+  for(const n of nodes){cx.fillStyle=n.label?'#45A8F7':'rgba(124,196,255,.5)'; cx.beginPath(); cx.arc(n.x,n.y,n.r,0,7); cx.fill();
+    if(n.label){const d=Math.hypot(n.x-mouse.x,n.y-mouse.y); cx.fillStyle=`rgba(139,155,176,${d<170?.95:.3})`; cx.fillText(n.label,n.x+7,n.y-6);}}
+  pulses=pulses.filter(p=>p.r<240);
+  for(const p of pulses){p.r+=4; cx.strokeStyle=`rgba(69,168,247,${1-p.r/240})`; cx.lineWidth=1.5; cx.beginPath(); cx.arc(p.x,p.y,p.r,0,7); cx.stroke();}
+  requestAnimationFrame(frame);
+}
+const hero=$('.hero');
+hero.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;});
+hero.addEventListener('pointerleave',()=>{mouse.x=mouse.y=-9999;});
+hero.addEventListener('click',e=>{ if(e.target.closest('a,button'))return; const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top; pulses.push({x,y,r:0}); nodes.forEach(n=>{const d=Math.hypot(n.x-x,n.y-y); if(d<200&&d>0){n.vx+=(n.x-x)/d*.7; n.vy+=(n.y-y)/d*.7;}}); });
+addEventListener('resize',()=>{ if(current==='inicio') resize(); });
+hooks['inicio:enter']=()=>{ resize(); if(!running){ running=true; if(reduce){ frame(); running=false; } else frame(); } };
+hooks['inicio:leave']=()=>{ running=false; };
+
+/* ================= SOBRE ================= */
+hooks['sobre:enter']=()=>{ if(reduce) return; $$('[data-count]').forEach(el=>{ const end=+el.dataset.count,t0=performance.now(); const step=t=>{const k=Math.min(1,(t-t0)/1000); el.textContent=Math.round(end*(1-Math.pow(1-k,3))); if(k<1)requestAnimationFrame(step);}; requestAnimationFrame(step); }); };
+
+/* ================= COMPETÊNCIAS ================= */
+const rackData=[
+  {t:'Infraestrutura e Sistemas',items:['VMware ESXi','Windows','Linux','Suporte técnico'],d:'Virtualização de servidores e suporte a sistemas operativos, aplicados no estágio no ITEL.'},
+  {t:'Redes e Segurança',items:['pfSense','Firewall','DNS','Troubleshooting de rede'],d:'Firewall e serviços de rede para controlar segurança e tráfego.'},
+  {t:'Monitorização',items:['Zabbix','Nagios'],d:'Monitorização contínua de servidores e serviços para garantir disponibilidade.'},
+  {t:'Back-end e Bases de Dados',items:['Python','Django','PHP','PostgreSQL','APIs REST','Postman'],d:'Usado no URBANDA: autenticação, gestão de utilizadores e APIs testadas com Postman.'},
+  {t:'Front-end',items:['HTML5','CSS3','JavaScript','React.js','Angular','Design responsivo','SEO técnico'],d:'Usado nos websites GEPGEO e C3-Geo: bilingue, PWA, Schema.org e animações.'},
+  {t:'Outras',items:['Análise de dados','Automação de tarefas','Gestão de projetos digitais','Redes sociais'],d:'Competências complementares do trabalho freelance e da gestão de projetos.'}
+];
+const rack=$('#rack'),rackCount=$('#rackCount');
+rackData.forEach((u,i)=>{ const row=document.createElement('div'); row.className='unit-row'+(i===0?' open':'');
+  row.innerHTML=`<button class="unit-btn" aria-expanded="${i===0}" aria-controls="ub${i}"><span class="u">U${String(i+1).padStart(2,'0')}</span><span class="t">${u.t}</span><span class="leds">${'<i></i>'.repeat(Math.min(u.items.length,6))}</span><svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l5 5-5 5"/></svg></button><div class="unit-body" id="ub${i}"><div><div class="chips">${u.items.map(s=>`<span class="chip">${s}</span>`).join('')}</div><p>${u.d}</p></div></div>`;
+  rack.appendChild(row); });
+const updCount=()=>rackCount.textContent=`${$$('.unit-row.open',rack).length}/${rackData.length} ativos`;
+rack.addEventListener('click',e=>{const b=e.target.closest('.unit-btn'); if(!b)return; const o=b.parentElement.classList.toggle('open'); b.setAttribute('aria-expanded',o); updCount();});
+updCount();
+
+const out=$('#termOut'),form=$('#termForm'),inp=$('#termInput');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cmds={
+  help:()=>`<span class="s">Comandos disponíveis:</span>
+  <span class="a">whoami</span>       quem sou
+  <span class="a">skills</span>       stack técnica por área
+  <span class="a">experiencia</span>  percurso profissional
+  <span class="a">projetos</span>     trabalho entregue
+  <span class="a">formacao</span>     percurso académico
+  <span class="a">idiomas</span>      línguas
+  <span class="a">contacto</span>     como falar comigo
+  <span class="a">ping</span>         testar a ligação
+  <span class="a">neofetch</span>     resumo do sistema
+  <span class="a">abrir</span> &lt;página&gt; ir para outra página
+  <span class="a">clear</span>        limpar o ecrã`,
+  whoami:()=>`Délcio Cunha
+Técnico de Infraestrutura de TI &amp; Desenvolvedor Web
+<span class="m">Luanda, Angola · estabilidade, segurança e automação</span>`,
+  skills:()=>rackData.map(u=>`<span class="s">[${u.t}]</span>\n  ${u.items.join(' · ')}`).join('\n'),
+  experiencia:()=>`<span class="a">2024–2025</span>  Técnico de Infraestrutura de TI (Estágio) · ITEL
+            ESXi · Windows/Linux · pfSense · DNS · Zabbix · Nagios
+<span class="a">2022–2026</span>  Gestor de Redes Sociais (Freelancer)
+            PIXELVERSE · KUDJIMA · ZANIRA`,
+  projetos:()=>`<span class="g">●</span> GEPGEO Consultoria   website 10 páginas · PT/EN · PWA · mapa 3D
+<span class="g">●</span> C3-Geo               website 6 páginas · SVG · WhatsApp Business
+<span class="g">●</span> URBANDA              Django + PostgreSQL · APIs REST · painel admin
+<span class="m">→ escreva "abrir projetos" para ver os detalhes</span>`,
+  formacao:()=>`<span class="a">2019–2025</span>  Ensino Médio · ITEL, Luanda
+<span class="a">2015–2018</span>  Ensino Secundário (I Ciclo) · Escola n.º 1107 do Bairro Azul`,
+  idiomas:()=>`Português  █████  nativo
+Inglês     ███░░  intermédio
+Espanhol   ███░░  intermédio`,
+  contacto:()=>`email     delciobentocunha007@gmail.com
+telefone  +244 947 976 103
+morada    Av. Marien Ngouabi, Maianga — Luanda`,
+  neofetch:()=>`<span class="s">   /\\      </span><span class="a">delcio</span>@<span class="a">itel-lab</span>
+<span class="s">  /  \\     </span>----------------
+<span class="s"> | DC |    </span><span class="s">Função:</span> Infra TI + Web
+<span class="s">  \\  /     </span><span class="s">Virtualização:</span> VMware ESXi
+<span class="s">   \\/      </span><span class="s">Firewall:</span> pfSense
+           <span class="s">Monitorização:</span> Zabbix, Nagios
+           <span class="s">Back-end:</span> Python, Django, PostgreSQL
+           <span class="s">Front-end:</span> JS, React.js, Angular
+           <span class="s">Idiomas:</span> PT, EN, ES`,
+  sudo:()=>`<span class="a">delcio não está no ficheiro sudoers. Este incidente será reportado.</span>`,
+  ls:()=>`sobre/  experiencia/  competencias/  projetos/  contacto.txt`,
+};
+const print=h=>{const p=document.createElement('pre'); p.innerHTML=h; out.appendChild(p); out.scrollTop=out.scrollHeight;};
+const hist=[]; let hi=0;
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+async function run(raw){
+  const c=raw.trim(); print(`<span class="p">delcio@<b>itel-lab</b>:~$</span> <span class="c">${esc(c)}</span>`); if(!c)return;
+  hist.push(c); hi=hist.length;
+  const [k,arg]=norm(c).split(/\s+/);
+  if(k==='clear'){out.innerHTML='';return;}
+  if(k==='abrir'||k==='cd'){ const r=(arg||'').replace(/[\/.]/g,''); if(ROUTES.includes(r)){print(`<span class="m">a abrir /${r}…</span>`); await wait(350); go(r,{push:true}); } else print(`<span class="a">página desconhecida.</span> <span class="m">opções: ${ROUTES.join(', ')}</span>`); return; }
+  if(k==='ping'){ for(let i=0;i<4;i++){await wait(300); print(`64 bytes de delcio.cunha: icmp_seq=${i+1} ttl=64 tempo=${(8+Math.random()*6).toFixed(1)} ms`);} print(`<span class="g">--- 4 pacotes transmitidos, 4 recebidos, 0% perdidos ---</span>`); return; }
+  if(cmds[k]) print(cmds[k]()); else print(`<span class="a">comando não encontrado: ${esc(k)}</span> <span class="m">· escreva help</span>`);
+}
+form.addEventListener('submit',e=>{e.preventDefault(); const v=inp.value; inp.value=''; run(v);});
+inp.addEventListener('keydown',e=>{
+  if(e.key==='ArrowUp'){if(hi>0){hi--;inp.value=hist[hi];}e.preventDefault();}
+  if(e.key==='ArrowDown'){if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}e.preventDefault();}
+  if(e.key==='Tab'&&inp.value){const m=Object.keys(cmds).concat(['ping','clear','abrir']).find(x=>x.startsWith(norm(inp.value))); if(m){inp.value=m;e.preventDefault();}}
+});
+$('#term').addEventListener('click',e=>{ if(!e.target.closest('button')&&!getSelection().toString()) inp.focus({preventScroll:true}); });
+['whoami','skills','projetos','neofetch','ping','contacto'].forEach(c=>{const b=document.createElement('button'); b.type='button'; b.textContent=c; b.addEventListener('click',()=>run(c)); $('#quick').appendChild(b);});
+print(`<span class="m">Último login: ${new Date().toLocaleDateString('pt-PT')} a partir de Luanda</span>`);
+print(cmds.whoami());
+print(`<span class="m">Escreva </span><span class="a">help</span><span class="m"> para ver os comandos. ↑ ↓ para o histórico, Tab para completar.</span>`);
+
+/* ================= PROJETOS ================= */
+const tabs=$$('.ptab'), projs=$$('.proj');
+function showProj(id){
+  tabs.forEach(t=>{const on=t.dataset.p===id; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1;});
+  projs.forEach(p=>{ const on=p.dataset.proj===id; p.hidden=!on; if(on&&!reduce){p.classList.remove('swap'); void p.offsetWidth; p.classList.add('swap');} });
+}
+tabs.forEach((t,i)=>{ t.addEventListener('click',()=>showProj(t.dataset.p));
+  t.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ const n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length]; n.focus(); showProj(n.dataset.p);} }); });
+projs.forEach(p=>{
+  p.addEventListener('pointermove',e=>{const r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height; p.style.setProperty('--px',x*100+'%'); p.style.setProperty('--py',y*100+'%'); if(fine&&!reduce){p.style.setProperty('--ry',((x-.5)*4)+'deg'); p.style.setProperty('--rx',(-(y-.5)*4)+'deg');}});
+  p.addEventListener('pointerleave',()=>{p.style.setProperty('--rx','0deg'); p.style.setProperty('--ry','0deg');});
+});
+const geo={pt:['Medimos o território com precisão.','Topografia · Geoprocessamento · Formação','Pedir orçamento'],en:['We measure the land with precision.','Surveying · Geoprocessing · Training','Request a quote']};
+let gl='pt';
+if(!reduce) setInterval(()=>{ if(current!=='projetos')return; gl=gl==='pt'?'en':'pt'; $('#geoH').textContent=geo[gl][0]; $('#geoS').textContent=geo[gl][1]; $('#geoB').textContent=geo[gl][2]; $$('#langSw b').forEach((b,i)=>b.classList.toggle('on',(i===0)===(gl==='pt'))); },3200);
+const base=[12,7,38];
+if(!reduce) setInterval(()=>{ if(current!=='projetos')return; ['#k1','#k2','#k3'].forEach((s,i)=>$(s).textContent=base[i]+Math.floor(Math.random()*3)); },2600);
+
+/* ================= CONTACTO ================= */
+const hb=$('#hexbg'),hc=hb.getContext('2d'),card=$('#contactCard'); let hm={x:-999,y:-999};
+function drawHex(){
+  const r=hb.getBoundingClientRect(); if(!r.width)return; const d=Math.min(devicePixelRatio||1,2);
+  if(hb.width!==Math.round(r.width*d)){hb.width=Math.round(r.width*d);hb.height=Math.round(r.height*d);}
+  hc.setTransform(d,0,0,d,0,0); hc.clearRect(0,0,r.width,r.height);
+  const s=26,h=s*Math.sqrt(3);
+  for(let y=0,row=0;y<r.height+h;y+=h/2,row++)for(let x=(row%2?s*1.5:0);x<r.width+s*3;x+=s*3){
+    const dd=Math.hypot(x-hm.x,y-hm.y),a=dd<170?(1-dd/170):0;
+    hc.beginPath(); for(let k=0;k<6;k++){const ang=Math.PI/3*k; const px=x+s*.9*Math.cos(ang),py=y+s*.9*Math.sin(ang); k?hc.lineTo(px,py):hc.moveTo(px,py);} hc.closePath();
+    hc.strokeStyle=`rgba(124,196,255,${.06+a*.45})`; hc.lineWidth=1; hc.stroke();
+    if(a>.5){hc.fillStyle=`rgba(69,168,247,${(a-.5)*.22})`; hc.fill();}
+  }
+}
+card.addEventListener('pointermove',e=>{const r=hb.getBoundingClientRect(); hm={x:e.clientX-r.left,y:e.clientY-r.top}; requestAnimationFrame(drawHex);});
+card.addEventListener('pointerleave',()=>{hm={x:-999,y:-999}; requestAnimationFrame(drawHex);});
+hooks['contacto:enter']=()=>requestAnimationFrame(drawHex);
+addEventListener('resize',()=>{ if(current==='contacto') drawHex(); });
+
+const toast=$('#toast'); let tt;
+const showToast=m=>{toast.textContent=m; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1800);};
+$$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  const v=b.dataset.copy;
+  const done=()=>{b.textContent='Copiado ✓'; b.classList.add('done'); showToast(`Copiado: ${v}`); setTimeout(()=>{b.textContent='Copiar'; b.classList.remove('done');},1800);};
+  const fallback=()=>{const s=b.closest('.c-item').querySelector('.v'); const r=document.createRange(); r.selectNodeContents(s); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); showToast('Texto selecionado — use Ctrl+C');};
+  try{ navigator.clipboard.writeText(v).then(done,fallback); }catch(e){ fallback(); }
+}));
+
+/* arranque */
+go((location.hash||'').slice(1));
+})();
+</script>
+
+</body></html>
