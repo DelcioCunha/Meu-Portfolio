@@ -11,7 +11,7 @@ HTML, CSS e JavaScript puros: não precisa de instalar nada nem de compilar. Tod
 | `sobre.html` | Sobre mim | Perfil que se ilumina palavra a palavra ao rolar, ficha técnica que se escreve sozinha, números, princípios, percurso 2015–2026 desenhado à escala, idiomas e competências pessoais |
 | `experiencia.html` | Experiência | Laboratório de rede interativo (pfSense, DNS, switch, ESXi, Zabbix/Nagios) com tráfego animado e simulação de incidente, linha do tempo, ciclo do trabalho freelance |
 | `competencias.html` | Competências | Grafo de forças que liga cada competência aos sítios onde foi usada, rack 6U e terminal com comandos (`help`, `neofetch`, `top`, `abrir projetos`…) |
-| `projetos.html` | Projetos | Galeria horizontal fixada ao scroll, capturas reais do Hortomar e da ADANA, maquetes interativas (troca PT/EN, drone que segue o rato, painel com filtros), estudos de caso em janela e pré-visualização ao vivo dos sites GEPGEO e C3-Geo em tamanho de computador, tablet e telemóvel |
+| `projetos.html` | Projetos | Galeria horizontal fixada ao scroll, o Sistema (RPG para Android com servidor, painel e site próprios, com trailer e capturas reais), a ANGA (website React da comunidade de Free Fire), capturas reais do Hortomar e da ADANA, maquetes interativas (troca PT/EN, drone que segue o rato, painel com filtros), estudos de caso em janela e pré-visualização ao vivo dos sites GEPGEO e C3-Geo em tamanho de computador, tablet e telemóvel |
 | `contacto.html` | Contacto | Compositor de mensagem com pré-visualização ao vivo que envia por WhatsApp ou email, código QR, vCard, CV em PDF, hora de Luanda e diferença horária |
 | `404.html` | Erro | Página de erro com traceroute |
 

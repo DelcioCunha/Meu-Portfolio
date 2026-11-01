@@ -55,9 +55,11 @@
   <nav class="crumbs" aria-label="Localização"><a href="index.html">~</a><span>/</span><span>projetos</span></nav>
   <p class="eyebrow" data-intro>Projetos</p>
   <h1 class="display">Trabalho <em>entregue</em>.</h1>
-  <p class="lead" data-intro>Sistemas de dados com web scraping e APIs, uma assistente virtual controlada por voz, websites institucionais, uma loja online e um sistema full stack construído de raiz, mais a gestão de três páginas no Facebook.</p>
+  <p class="lead" data-intro>Um RPG para Android com servidor, painel de administração e site próprios, o website da comunidade de Free Fire que fundei, sistemas de dados com web scraping e APIs, uma assistente virtual controlada por voz, websites institucionais, uma loja online e um sistema full stack construído de raiz, mais a gestão de três páginas no Facebook.</p>
   <div class="proj-index" data-intro>
-    <a href="#p-hortomar" class="pi pi-feat"><b>Hortomar</b><span>★ destaque · scraping + dados</span></a>
+    <a href="#p-sistema" class="pi pi-feat"><b>Sistema</b><span>★ novo · app Android + servidor</span></a>
+    <a href="#p-anga" class="pi"><b>ANGA</b><span>website React · comunidade</span></a>
+    <a href="#p-hortomar" class="pi"><b>Hortomar</b><span>scraping + dados</span></a>
     <a href="#p-adana" class="pi"><b>ADANA</b><span>assistente por voz · 2021</span></a>
     <a href="#p-gepgeo" class="pi"><b>GEPGEO</b><span>website · 10 páginas</span></a>
     <a href="#p-c3" class="pi"><b>C3-Geo</b><span>website · 6 páginas</span></a>
@@ -73,10 +75,78 @@
     <div class="hg-progress" aria-hidden="true"><span id="hgBar"></span></div>
     <div class="hg-track" id="hgTrack">
 
+      <!-- SISTEMA (novo) -->
+      <article class="panel" id="p-sistema">
+        <div class="panel-info">
+          <p class="p-count">1 / 8</p>
+          <div class="p-tags"><span class="tag feat">★ Projeto mais recente</span><span class="tag ok">App Android · full stack</span><span class="tag amber">Criador e único desenvolvedor</span></div>
+          <h2 class="p-title">Sistema</h2>
+          <p class="p-sector">Um RPG para Android em que a vida real é o jogo: o jogador cumpre missões do dia a dia, ganha XP e enfrenta mais de cem chefes · V.01 «The System» · 2025 – 2026</p>
+          <ul class="p-points">
+            <li>App Android completa: missões, 6 classes, 100 chefes, combate por turnos, sombras e duelos online</li>
+            <li>Servidor próprio em Cloudflare Workers com base de dados D1 e painel de administração em app</li>
+            <li>Venda por código de ativação, bloqueio por aparelho, restauro de conta, teste de 1 hora e programa de parceiros</li>
+          </ul>
+          <div class="p-actions">
+            <button class="btn btn-primary" type="button" data-case="sistema" data-magnet>Ver estudo de caso <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+            <a class="btn btn-ghost" href="https://delciocunha.github.io/SystemWebsite2/" target="_blank" rel="noopener" data-magnet>Ver site oficial <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>sistema · app Android, servidor e painel</span></div>
+          <div class="mock-body m-shot">
+            <div class="shot-flow mono" aria-hidden="true"><span>app</span><i>→</i><span>API</span><i>→</i><span>D1</span><i>→</i><span>painel</span></div>
+            <div class="shot-tabs" role="group" aria-label="Capturas do projeto Sistema">
+              <button type="button" class="on" data-shot="assets/img/projetos/sistema-jogo.jpg" data-alt="Ecrãs da app: estado do jogador, missões diárias e combate por turnos">Jogo</button>
+              <button type="button" data-shot="assets/img/projetos/sistema-chefes.jpg" data-alt="Ecrãs da app: portões com chefes, Coliseu dos Condenados e loja">Chefes</button>
+              <button type="button" data-shot="assets/img/projetos/sistema-ativacao.jpg" data-alt="Ecrãs de ativação com teste de 1 hora, restauro de conta e programa de parceiros">Ativação</button>
+              <button type="button" data-shot="assets/img/projetos/sistema-painel.jpg" data-alt="Painel de administração: código de restauro, aparelhos e modo de teste">Painel</button>
+              <button type="button" data-shot="assets/img/projetos/sistema-site.jpg" data-alt="Página inicial do site oficial do Sistema">Site</button>
+            </div>
+            <div class="shot-view"><img src="assets/img/projetos/sistema-jogo.jpg" alt="Ecrãs da app: estado do jogador, missões diárias e combate por turnos" width="1600" height="900" loading="lazy"></div>
+          </div>
+          <span class="mock-note">capturas reais · troque de separador</span>
+        </div>
+      </article>
+
+      <!-- ANGA -->
+      <article class="panel" id="p-anga">
+        <div class="panel-info">
+          <p class="p-count">2 / 8</p>
+          <div class="p-tags"><span class="tag">Website · React</span><span class="tag amber">Fundador e desenvolvedor</span></div>
+          <h2 class="p-title">ANGA</h2>
+          <p class="p-sector">Aliança Nacional de Guildas Angolanas: website oficial da comunidade de Free Fire que fundei em 2025, com 1709 membros, 32 grupos e 24 guildas</p>
+          <ul class="p-points">
+            <li>13 páginas em React + Vite: Liga, guildas, mercado, eventos, troféus, recordes, notícias e regras</li>
+            <li>Todo o conteúdo em JSON, com um validador que bloqueia a publicação se houver erros</li>
+            <li>Site num só ficheiro que abre por duplo clique, publicado automaticamente com GitHub Actions</li>
+          </ul>
+          <div class="p-actions">
+            <button class="btn btn-primary" type="button" data-case="anga" data-magnet>Ver estudo de caso <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+            <a class="btn btn-ghost" href="https://delciocunha.github.io/ANGA/" target="_blank" rel="noopener" data-magnet>Ver site online <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span>delciocunha.github.io/ANGA</span></div>
+          <div class="mock-body m-shot">
+            <div class="shot-flow mono" aria-hidden="true"><span>JSON</span><i>→</i><span>validador</span><i>→</i><span>React</span><i>→</i><span>site</span></div>
+            <div class="shot-tabs" role="group" aria-label="Capturas do projeto ANGA">
+              <button type="button" class="on" data-shot="assets/img/projetos/anga-home.jpg" data-alt="Página inicial da Aliança Nacional de Guildas Angolanas">Início</button>
+              <button type="button" data-shot="assets/img/projetos/anga-liga.jpg" data-alt="Página da Liga Aliança com a temporada e o formato">Liga</button>
+              <button type="button" data-shot="assets/img/projetos/anga-guildas.jpg" data-alt="Salão de guildas com pesquisa e ordenação">Guildas</button>
+              <button type="button" data-shot="assets/img/projetos/anga-mercado.jpg" data-alt="Mercado da Aliança com pedidos pelo WhatsApp">Mercado</button>
+              <button type="button" data-shot="assets/img/projetos/anga-noticias.jpg" data-alt="Notícias da Aliança com filtros por categoria">Notícias</button>
+            </div>
+            <div class="shot-view"><img src="assets/img/projetos/anga-home.jpg" alt="Página inicial da Aliança Nacional de Guildas Angolanas" width="1440" height="900" loading="lazy"></div>
+          </div>
+          <span class="mock-note">capturas reais · troque de separador</span>
+        </div>
+      </article>
+
       <!-- HORTOMAR (destaque) -->
       <article class="panel is-feat" id="p-hortomar">
         <div class="panel-info">
-          <p class="p-count">1 / 6</p>
+          <p class="p-count">3 / 8</p>
           <div class="p-tags"><span class="tag feat">★ Em destaque</span><span class="tag">Dados · APIs · web scraping</span><span class="tag amber">Desenvolvedor</span></div>
           <h2 class="p-title">Hortomar</h2>
           <p class="p-sector">Dados atualizados do estado do mar de Angola, prontos para um sistema de gestão de barcos e pescadores</p>
@@ -108,7 +178,7 @@
       <!-- ADANA -->
       <article class="panel" id="p-adana">
         <div class="panel-info">
-          <p class="p-count">2 / 6</p>
+          <p class="p-count">4 / 8</p>
           <div class="p-tags"><span class="tag">Assistente virtual</span><span class="tag amber">Criador · 2021</span></div>
           <h2 class="p-title">ADANA</h2>
           <p class="p-sector">Assistente virtual em Python controlada por comandos de voz</p>
@@ -140,7 +210,7 @@
       <!-- GEPGEO -->
       <article class="panel" id="p-gepgeo">
         <div class="panel-info">
-          <p class="p-count">3 / 6</p>
+          <p class="p-count">5 / 8</p>
           <div class="p-tags"><span class="tag">Website institucional</span><span class="tag amber">Desenvolvedor Web</span></div>
           <h2 class="p-title">GEPGEO Consultoria</h2>
           <p class="p-sector">Topografia, geoprocessamento, engenharia civil e formação</p>
@@ -178,7 +248,7 @@
       <!-- C3-GEO -->
       <article class="panel" id="p-c3">
         <div class="panel-info">
-          <p class="p-count">4 / 6</p>
+          <p class="p-count">6 / 8</p>
           <div class="p-tags"><span class="tag">Website institucional</span><span class="tag amber">Desenvolvedor Web</span></div>
           <h2 class="p-title">C3-Geo</h2>
           <p class="p-sector">Engenharia de dados geoespaciais: drones, mineração e SIG</p>
@@ -224,7 +294,7 @@
       <!-- URBANDA -->
       <article class="panel" id="p-urbanda">
         <div class="panel-info">
-          <p class="p-count">5 / 6</p>
+          <p class="p-count">7 / 8</p>
           <div class="p-tags"><span class="tag ok">Sistema full stack</span><span class="tag amber">Criador e principal desenvolvedor</span></div>
           <h2 class="p-title">URBANDA</h2>
           <p class="p-sector">Sistema de Gestão de Denúncias Urbanas · 2024 – 2025</p>
@@ -257,7 +327,7 @@
       <!-- KUDJIMA -->
       <article class="panel" id="p-kudjima">
         <div class="panel-info">
-          <p class="p-count">6 / 6</p>
+          <p class="p-count">8 / 8</p>
           <div class="p-tags"><span class="tag">Loja online</span><span class="tag amber">Desenvolvedor Web · parceiro</span></div>
           <h2 class="p-title">Kudjima</h2>
           <p class="p-sector">Venda de mariscos, camarão e peixe congelado · projeto apoiado pelo Sonajovem</p>
@@ -293,7 +363,7 @@
       <article class="panel panel-end">
         <div class="end-in">
           <p class="eyebrow">Próximo projeto</p>
-          <h2 class="p-title">O seu pode ser o <em class="hl">sétimo</em>.</h2>
+          <h2 class="p-title">O seu pode ser o <em class="hl">nono</em>.</h2>
           <p class="lead">Website, aplicação, dados, automação ou inteligência artificial: conte-me o que precisa.</p>
           <a class="btn btn-amber" href="contacto.html" data-magnet>Falar sobre um projeto <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
         </div>
@@ -540,6 +610,116 @@
       <p class="case-note">Site real, carregado diretamente do GitHub Pages. Se não aparecer, <a href="https://nataniela-melo.github.io/Kudjima/" target="_blank" rel="noopener">abra-o numa nova janela ↗</a>.</p>
     </div>
     <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Design responsivo</span><span class="chip">WhatsApp</span><span class="chip">GitHub Pages</span></div></div>
+  </div>
+</dialog>
+
+<dialog class="case" data-lenis-prevent id="case-sistema" aria-labelledby="cs-t">
+  <div class="case-in">
+    <header class="case-head">
+      <div><p class="eyebrow">Estudo de caso · App Android, servidor e negócio</p><h2 class="case-title" id="cs-t">Sistema</h2><p class="lead">Um RPG para Android em que a vida real é o jogo. O jogador escreve as missões do seu dia a dia, cumpre-as, ganha XP e evolui, e com isso enfrenta mais de cem chefes. Inspirado no universo de Solo Leveling e feito para o público angolano.</p></div>
+      <button class="case-x" type="button" data-close aria-label="Fechar estudo de caso">✕</button>
+    </header>
+    <div class="case-meta"><div><span>Função</span><b>Criador e único desenvolvedor</b></div><div><span>Plataformas</span><b>Android · web</b></div><div><span>Servidor</span><b>Cloudflare Workers + D1</b></div><div><span>Versão</span><b>V.01 «The System» · 2025–2026</b></div></div>
+    <div class="case-sec">
+      <h3>Contexto</h3>
+      <p>O Sistema transforma hábitos reais (treinar, estudar, ler, organizar a casa) num RPG. Cada missão cumprida dá XP, moedas e baús; o avatar muda de forma ao subir de nível e a progressão abre 10 portões com 100 chefes, um Coliseu, sombras que lutam pelo jogador e duelos online entre amigos. O Sistema também «vigia»: recusa missões falsas, nota quando algo é concluído depressa demais e castiga quem falha a Missão Diária.</p>
+      <p style="margin-top:12px">Além do jogo, construí todo o negócio à volta dele: venda por código de ativação com pagamento por Multicaixa Express, painel de administração, site oficial, vídeos promocionais e um programa de parceiros com comissões.</p>
+    </div>
+    <div class="case-sec">
+      <h3>Trailer</h3>
+      <div class="case-video"><video controls playsinline preload="none" poster="assets/img/projetos/sistema-trailer.jpg" width="540" height="960"><source src="assets/video/sistema-trailer.mp4" type="video/mp4"></video></div>
+    </div>
+    <div class="case-sec">
+      <h3>Arquitetura</h3>
+      <div class="arch" aria-label="Arquitetura: a app Android fala com uma API em Cloudflare Workers, que guarda os dados numa base de dados D1; o painel de administração e o site oficial usam a mesma API.">
+        <div class="ar-node"><small>cliente</small><b>App Android</b><span>JavaScript · Capacitor</span></div>
+        <div class="ar-link"><span>HTTPS · JSON</span></div>
+        <div class="ar-node hl"><small>servidor</small><b>API</b><span>Cloudflare Workers</span></div>
+        <div class="ar-link"><span>SQL</span></div>
+        <div class="ar-node"><small>dados</small><b>D1 (SQLite)</b><span>jogadores · aparelhos · pedidos</span></div>
+        <div class="ar-side"><div class="ar-node sm"><b>Painel de administração</b><span>app Android própria</span></div><div class="ar-node sm"><b>Site oficial</b><span>GitHub Pages · preço e vídeos ao vivo</span></div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>O que construí</h3>
+      <div class="feat">
+        <div><b>Jogo completo</b><span>missões reais, 6 classes, 34 formas do avatar por classe, mais de 460 itens e 124 habilidades</span></div>
+        <div><b>100 chefes e Coliseu</b><span>combate por turnos com magia, mana, poções, sombras e chefes em várias fases</span></div>
+        <div><b>Duelos online</b><span>salas entre jogadores, turnos decididos no servidor, emotes e 41 patentes</span></div>
+        <div><b>Sistema vivo</b><span>mais de 700 conversas, missões de emergência, vigilância anti-batota e Zona de Penalidade</span></div>
+        <div><b>Venda e ativação</b><span>código de ativação por aparelho, identificação por hardware e bloqueio que sobrevive a reinstalações</span></div>
+        <div><b>Contas seguras</b><span>transferência entre telemóveis, cópia de segurança no servidor e código de restauro gerado no painel</span></div>
+        <div><b>Teste de 1 hora</b><span>um teste grátis por aparelho, contado pelo relógio do servidor e registado no painel</span></div>
+        <div><b>Loja e parceiros</b><span>Cristais e moedas pelo WhatsApp com Multicaixa Express, e programa de parceiros com 4 níveis de comissão</span></div>
+        <div><b>Painel de administração</b><span>pedidos, jogadores, aparelhos, códigos, ofertas, avisos e estatísticas, numa app à parte</span></div>
+        <div><b>Qualidade</b><span>testes automáticos do motor, da interface e do servidor, e publicação contínua com GitHub Actions</span></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>Capturas do projeto</h3>
+      <div class="case-shots">
+        <figure><img src="assets/img/projetos/sistema-jogo.jpg" alt="Estado do jogador, missões diárias e combate por turnos" width="1600" height="900" loading="lazy"><figcaption>1 · O jogo: estado, missões reais e combate</figcaption></figure>
+        <figure><img src="assets/img/projetos/sistema-chefes.jpg" alt="Portões com chefes, Coliseu dos Condenados e loja" width="1600" height="900" loading="lazy"><figcaption>2 · Portões, Coliseu e loja</figcaption></figure>
+        <figure><img src="assets/img/projetos/sistema-ativacao.jpg" alt="Ecrã de ativação com teste de 1 hora, restauro de conta e programa de parceiros" width="1600" height="900" loading="lazy"><figcaption>3 · Ativação, teste de 1 hora, restauro e parceiros</figcaption></figure>
+        <figure><img src="assets/img/projetos/sistema-painel.jpg" alt="Painel de administração com código de restauro e definições de ativação" width="1600" height="900" loading="lazy"><figcaption>4 · Painel de administração</figcaption></figure>
+        <figure><img src="assets/img/projetos/sistema-site.jpg" alt="Página inicial do site oficial do Sistema" width="1600" height="900" loading="lazy"><figcaption>5 · Site oficial</figcaption></figure>
+        <figure><img src="assets/img/projetos/sistema-parceiros.jpg" alt="Página do programa de parceiros no site oficial" width="1600" height="900" loading="lazy"><figcaption>6 · Programa de parceiros no site</figcaption></figure>
+      </div>
+      <p class="case-note">Site oficial: <a href="https://delciocunha.github.io/SystemWebsite2/" target="_blank" rel="noopener">delciocunha.github.io/SystemWebsite2 ↗</a></p>
+    </div>
+    <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Capacitor</span><span class="chip">Android</span><span class="chip">Cloudflare Workers</span><span class="chip">Cloudflare D1 (SQLite)</span><span class="chip">APIs REST</span><span class="chip">GitHub Actions</span><span class="chip">GitHub Pages</span><span class="chip">Python</span><span class="chip">FFmpeg</span><span class="chip">Playwright</span><span class="chip">Claude Code</span></div></div>
+  </div>
+</dialog>
+
+<dialog class="case" data-lenis-prevent id="case-anga" aria-labelledby="ca-t">
+  <div class="case-in">
+    <header class="case-head">
+      <div><p class="eyebrow">Estudo de caso · Website de comunidade</p><h2 class="case-title" id="ca-t">ANGA</h2><p class="lead">Website oficial da Aliança Nacional de Guildas Angolanas, a comunidade de Free Fire que fundei a 22 de março de 2025. Hoje reúne 1709 membros, 32 grupos e 24 guildas na Liga Aliança.</p></div>
+      <button class="case-x" type="button" data-close aria-label="Fechar estudo de caso">✕</button>
+    </header>
+    <div class="case-meta"><div><span>Função</span><b>Fundador e desenvolvedor</b></div><div><span>Tecnologia</span><b>React + Vite</b></div><div><span>Conteúdo</span><b>JSON validado</b></div><div><span>Publicação</span><b>GitHub Actions · Pages</b></div></div>
+    <div class="case-sec">
+      <h3>Contexto</h3>
+      <p>A Aliança nasceu para dar às guildas angolanas de Free Fire um lugar organizado, competitivo e respeitado. Toda a vida da comunidade acontecia em grupos de WhatsApp; faltava um sítio oficial onde qualquer pessoa pudesse ver a Liga, as guildas, os troféus, as regras e as notícias, e onde a administração pudesse publicar sem depender de um programador.</p>
+      <p style="margin-top:12px">Por isso o site separa o conteúdo do código: tudo o que aparece está em ficheiros JSON, e cada contacto abre o WhatsApp com a mensagem já escrita. Nada é guardado no site.</p>
+    </div>
+    <div class="case-sec">
+      <h3>Arquitetura</h3>
+      <div class="arch" aria-label="Arquitetura: o conteúdo em JSON passa por um validador e por um serviço de conteúdo, os componentes React montam as páginas e o Vite gera um site estático publicado pelo GitHub Actions no GitHub Pages.">
+        <div class="ar-node"><small>conteúdo</small><b>JSON</b><span>11 ficheiros · guildas, liga, notícias…</span></div>
+        <div class="ar-link"><span>validação</span></div>
+        <div class="ar-node hl"><small>aplicação</small><b>React + Vite</b><span>serviço de conteúdo · componentes · páginas</span></div>
+        <div class="ar-link"><span>build</span></div>
+        <div class="ar-node"><small>saída</small><b>Site estático</b><span>um só HTML com JS e CSS embutidos</span></div>
+        <div class="ar-side"><div class="ar-node sm"><b>GitHub Actions</b><span>valida, gera e publica a cada push</span></div><div class="ar-node sm"><b>WhatsApp</b><span>contactos com mensagem pré-preenchida</span></div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>O que construí</h3>
+      <div class="feat">
+        <div><b>13 páginas</b><span>Início, Sobre, Liga, Guildas, Mercado, Eventos, Troféus, Recordes, Notícias, Regras, Galeria, Contactos e o registo de guildas expulsas</span></div>
+        <div><b>Liga Aliança</b><span>formato 4v4, pontuação, temporadas, regras de falta de comparência e progresso da época</span></div>
+        <div><b>Salão de guildas</b><span>24 guildas com líder, membros e campanha, com pesquisa e ordenação</span></div>
+        <div><b>Notícias</b><span>28 artigos com filtros por categoria e página própria para cada notícia</span></div>
+        <div><b>Mercado da Aliança</b><span>diamantes, passes e assinaturas com pedido pronto no WhatsApp</span></div>
+        <div><b>Troféus e recordes</b><span>galeria histórica dos campeões e marcas confirmadas pela administração</span></div>
+        <div><b>Validador de conteúdo</b><span>bloqueia a publicação com JSON inválido, IDs repetidos, datas erradas ou imagens em falta</span></div>
+        <div><b>Funciona em qualquer lado</b><span>abre por duplo clique, rotas com # e publicação automática no GitHub Pages</span></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <h3>Capturas do projeto</h3>
+      <div class="case-shots">
+        <figure><img src="assets/img/projetos/anga-home.jpg" alt="Página inicial da Aliança" width="1440" height="900" loading="lazy"><figcaption>1 · Página inicial</figcaption></figure>
+        <figure><img src="assets/img/projetos/anga-liga.jpg" alt="Página da Liga Aliança" width="1440" height="900" loading="lazy"><figcaption>2 · Liga Aliança</figcaption></figure>
+        <figure><img src="assets/img/projetos/anga-guildas.jpg" alt="Salão de guildas" width="1440" height="900" loading="lazy"><figcaption>3 · Salão de guildas</figcaption></figure>
+        <figure><img src="assets/img/projetos/anga-mercado.jpg" alt="Mercado da Aliança" width="1440" height="900" loading="lazy"><figcaption>4 · Mercado da Aliança</figcaption></figure>
+        <figure><img src="assets/img/projetos/anga-trofeus.jpg" alt="Salão de troféus" width="1440" height="900" loading="lazy"><figcaption>5 · Salão de troféus</figcaption></figure>
+        <figure><img src="assets/img/projetos/anga-noticias.jpg" alt="Notícias da Aliança" width="1440" height="900" loading="lazy"><figcaption>6 · Notícias</figcaption></figure>
+      </div>
+      <p class="case-note">Site online: <a href="https://delciocunha.github.io/ANGA/" target="_blank" rel="noopener">delciocunha.github.io/ANGA ↗</a></p>
+    </div>
+    <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">React.js</span><span class="chip">Vite</span><span class="chip">JavaScript</span><span class="chip">CSS3</span><span class="chip">JSON</span><span class="chip">Node.js</span><span class="chip">Design responsivo</span><span class="chip">GitHub Actions</span><span class="chip">GitHub Pages</span><span class="chip">WhatsApp</span></div></div>
   </div>
 </dialog>
 

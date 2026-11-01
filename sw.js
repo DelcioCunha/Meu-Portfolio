@@ -1,5 +1,5 @@
 /* Service worker — o portfólio funciona offline depois da primeira visita */
-const CACHE = 'dc-portfolio-v13';
+const CACHE = 'dc-portfolio-v15';
 const ASSETS = [
  "./404.html",
  "./assets/css/base.css",
@@ -25,7 +25,20 @@ const ASSETS = [
  "./assets/img/projetos/adana-pastas.jpg",
  "./assets/img/projetos/adana-site.jpg",
  "./assets/img/projetos/adana-wikipedia.jpg",
+ "./assets/img/projetos/anga-guildas.jpg",
+ "./assets/img/projetos/anga-home.jpg",
+ "./assets/img/projetos/anga-liga.jpg",
+ "./assets/img/projetos/anga-mercado.jpg",
+ "./assets/img/projetos/anga-noticias.jpg",
+ "./assets/img/projetos/anga-trofeus.jpg",
  "./assets/img/projetos/hortomar-codigo.jpg",
+ "./assets/img/projetos/sistema-ativacao.jpg",
+ "./assets/img/projetos/sistema-chefes.jpg",
+ "./assets/img/projetos/sistema-jogo.jpg",
+ "./assets/img/projetos/sistema-painel.jpg",
+ "./assets/img/projetos/sistema-parceiros.jpg",
+ "./assets/img/projetos/sistema-site.jpg",
+ "./assets/img/projetos/sistema-trailer.jpg",
  "./assets/img/projetos/hortomar-consola.jpg",
  "./assets/img/projetos/hortomar-csv.jpg",
  "./assets/img/projetos/hortomar-fonte.jpg",
