@@ -1,5 +1,5 @@
 /* Service worker — o portfólio funciona offline depois da primeira visita */
-const CACHE = 'dc-portfolio-v17';
+const CACHE = 'dc-portfolio-v18';
 const ASSETS = [
  "./404.html",
  "./assets/css/base.css",
@@ -38,7 +38,6 @@ const ASSETS = [
  "./assets/img/projetos/sistema-painel.jpg",
  "./assets/img/projetos/sistema-parceiros.jpg",
  "./assets/img/projetos/sistema-site.jpg",
- "./assets/img/projetos/sistema-trailer.jpg",
  "./assets/img/projetos/hortomar-consola.jpg",
  "./assets/img/projetos/hortomar-csv.jpg",
  "./assets/img/projetos/hortomar-fonte.jpg",
@@ -72,7 +71,7 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -82,7 +81,7 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
   // páginas: rede primeiro (conteúdo atual), cache como reserva
   if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return r; })
+    e.respondWith(fetch(req, { cache: 'no-cache' }).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return r; })
       .catch(() => caches.match(req).then(r => r || caches.match('./404.html'))));
     return;
   }
