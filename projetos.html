@@ -322,18 +322,18 @@
         </div>
         <div class="mock">
           <div class="mock-bar"><i></i><i></i><i></i><span>urbanda · painel administrativo</span></div>
-          <div class="mock-body m-urb">
-            <div class="mu-side"><span class="mu-logo">U</span><span class="pill on"></span><span class="pill"></span><span class="pill"></span><span class="pill"></span></div>
-            <div class="mu-main">
-              <div class="mu-kpis" id="muKpis"></div>
-              <div class="mu-filters" role="group" aria-label="Filtrar denúncias de exemplo">
-                <button type="button" class="on" data-f="todas">todas</button><button type="button" data-f="nova">novas</button><button type="button" data-f="analise">em análise</button><button type="button" data-f="resolvida">resolvidas</button>
-              </div>
-              <div class="mu-table" id="muTable"></div>
-              <div class="mu-api mono" id="muApi"><b>GET</b> /api/denuncias/ <span>→ 200 OK</span></div>
+          <div class="mock-body m-shot">
+            <div class="shot-flow mono" aria-hidden="true"><span>denúncia</span><i>→</i><span>Django</span><i>→</i><span>PostgreSQL</span><i>→</i><span>painel</span></div>
+            <div class="shot-tabs" role="group" aria-label="Capturas do sistema URBANDA">
+              <button type="button" class="on" data-shot="assets/img/projetos/urbanda-inicio.jpg" data-alt="Página inicial do painel administrativo com totais de utilizadores, administradores e denúncias">Painel</button>
+              <button type="button" data-shot="assets/img/projetos/urbanda-denunciar.jpg" data-alt="Formulário de denúncia com seleção da localização num mapa Leaflet">Denunciar</button>
+              <button type="button" data-shot="assets/img/projetos/urbanda-permissoes.jpg" data-alt="Gestão dos níveis de acesso: administrador, superusuário e moderador">Permissões</button>
+              <button type="button" data-shot="assets/img/projetos/urbanda-confirmar.jpg" data-alt="Janela de confirmação antes de alterar as permissões de um utilizador">Confirmação</button>
+              <button type="button" data-shot="assets/img/projetos/urbanda-relatorios.jpg" data-alt="Relatórios de utilizadores, administradores e denúncias em PDF, Excel e CSV">Relatórios</button>
             </div>
+            <div class="shot-view"><img src="assets/img/projetos/urbanda-inicio.jpg" alt="Página inicial do painel administrativo com totais de utilizadores, administradores e denúncias" width="1280" height="652" loading="lazy"></div>
           </div>
-          <span class="mock-note">dados de exemplo · experimente os filtros</span>
+          <span class="mock-note">capturas reais · troque de separador</span>
         </div>
       </article>
 
@@ -577,6 +577,17 @@
         <div><b>Acompanhamento de denúncias</b><span>cada denúncia seguida até ao fim</span></div>
         <div><b>Painel administrativo</b><span>visão geral e gestão</span></div>
       </div>
+    </div>
+    <div class="case-sec">
+      <h3>Capturas do sistema</h3>
+      <div class="case-shots">
+        <figure><img src="assets/img/projetos/urbanda-inicio.jpg" alt="Página inicial do painel administrativo com totais de utilizadores, administradores e denúncias" width="1280" height="652" loading="lazy"><figcaption>1 · Página inicial do painel administrativo com totais de utilizadores, administradores e denúncias</figcaption></figure>
+        <figure><img src="assets/img/projetos/urbanda-denunciar.jpg" alt="Formulário de denúncia com seleção da localização num mapa Leaflet" width="1280" height="649" loading="lazy"><figcaption>2 · Formulário de denúncia com seleção da localização num mapa Leaflet</figcaption></figure>
+        <figure><img src="assets/img/projetos/urbanda-permissoes.jpg" alt="Gestão dos níveis de acesso: administrador, superusuário e moderador" width="1280" height="660" loading="lazy"><figcaption>3 · Gestão dos níveis de acesso: administrador, superusuário e moderador</figcaption></figure>
+        <figure><img src="assets/img/projetos/urbanda-confirmar.jpg" alt="Janela de confirmação antes de alterar as permissões de um utilizador" width="1280" height="648" loading="lazy"><figcaption>4 · Janela de confirmação antes de alterar as permissões de um utilizador</figcaption></figure>
+        <figure><img src="assets/img/projetos/urbanda-relatorios.jpg" alt="Relatórios de utilizadores, administradores e denúncias em PDF, Excel e CSV" width="1280" height="662" loading="lazy"><figcaption>5 · Relatórios de utilizadores, administradores e denúncias em PDF, Excel e CSV</figcaption></figure>
+      </div>
+      <p class="case-note">Os emails dos utilizadores foram desfocados para proteger a privacidade.</p>
     </div>
     <div class="case-sec"><h3>Tecnologias</h3><div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">PostgreSQL</span><span class="chip">APIs REST</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Postman</span></div></div>
   </div>
