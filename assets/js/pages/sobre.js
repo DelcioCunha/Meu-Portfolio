@@ -105,4 +105,55 @@
     });
     sec.addEventListener('pointerleave', () => cells.forEach(c => { c.style.setProperty('--s', 1); c.classList.remove('hot'); }));
   }
+  /* ---------- baralho de currículos ---------- */
+  const deck = document.getElementById('cvDeck');
+  if (deck) {
+    const slides = JSON.parse(deck.dataset.slides);
+    const sheets = [...deck.querySelectorAll('.cv-sheet')], dots = [...document.querySelectorAll('.cv-dot')];
+    const panels = [...document.querySelectorAll('#cvSide .role-panel')];
+    const name = document.getElementById('cvName'), meta = document.getElementById('cvMeta'), open = document.getElementById('cvOpen'), down = document.getElementById('cvDown');
+    const N = sheets.length, red = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur = 0, busy = false;
+    const layout = () => sheets.forEach((s, i) => {
+      const p = (i - cur + N) % N;
+      s.style.setProperty('--p', Math.min(p, 3));
+      s.classList.toggle('is-front', p === 0); s.classList.toggle('is-hidden', p > 3);
+      s.tabIndex = p === 0 ? 0 : -1; p === 0 ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true');
+    });
+    const info = () => {
+      const d = slides[cur];
+      name.textContent = cur === 0 ? 'Currículo Vitae' : d.t;
+      meta.textContent = `${d.s} · PDF · 1 página · ${cur + 1} de ${N}`;
+      open.href = d.pdf; down.href = d.pdf; down.setAttribute('download', d.fn);
+      dots.forEach((b, i) => b.classList.toggle('on', i === cur));
+      panels.forEach(pn => { const on = +pn.dataset.i === cur; pn.hidden = !on; pn.classList.toggle('is-on', on); });
+    };
+    function go(to, dir) {
+      to = (to + N) % N; if (to === cur || busy) return;
+      if (red) { cur = to; layout(); info(); return; }
+      busy = true;
+      if (dir > 0) {
+        const leaving = sheets[cur]; leaving.classList.add('flip-out');
+        cur = to;
+        setTimeout(() => { leaving.classList.remove('flip-out'); layout(); busy = false; }, 560);
+        sheets.forEach((s, i) => { if (s !== leaving) { const p = (i - cur + N) % N; s.style.setProperty('--p', Math.min(p, 3)); s.classList.toggle('is-front', p === 0); s.classList.toggle('is-hidden', p > 3); } });
+      } else {
+        cur = to; layout(); const c = sheets[cur]; c.classList.add('flip-in');
+        setTimeout(() => { c.classList.remove('flip-in'); busy = false; }, 600);
+      }
+      info();
+    }
+    document.getElementById('cvNext').addEventListener('click', () => go(cur + 1, 1));
+    document.getElementById('cvPrev').addEventListener('click', () => go(cur - 1, -1));
+    dots.forEach((b, i) => b.addEventListener('click', () => go(i, i > cur ? 1 : -1)));
+    deck.addEventListener('keydown', e => { if (e.key === 'ArrowRight') go(cur + 1, 1); if (e.key === 'ArrowLeft') go(cur - 1, -1); });
+    let sx = null, swiped = false;
+    deck.addEventListener('pointerdown', e => { sx = e.clientX; });
+    deck.addEventListener('dragstart', e => e.preventDefault());
+    deck.addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx; sx = null; swiped = Math.abs(dx) > 40; if (swiped) { go(cur + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); } });
+    deck.addEventListener('click', e => { if (swiped) { e.preventDefault(); swiped = false; } });
+    const keys = slides.map(d => d.k), h = location.hash.replace('#cv-', '');
+    layout(); info();
+    if (location.hash.startsWith('#cv-') && keys.includes(h)) { cur = keys.indexOf(h); layout(); info(); }
+  }
 })();

@@ -335,6 +335,7 @@
       { group: 'Ações', icon: 'IG', label: 'Abrir Instagram', hint: '@delcio_369', run: () => window.open(CONTACT.instagram, '_blank', 'noopener') },
       { group: 'Ações', icon: 'f', label: 'Abrir Facebook', hint: 'delcio.cunha.2025', run: () => window.open(CONTACT.facebook, '_blank', 'noopener') },
       { group: 'Ações', icon: 'X', label: 'Abrir X', hint: '@DelcioCunha369', run: () => window.open(CONTACT.x, '_blank', 'noopener') },
+      { group: 'Ações', icon: 'CV', label: 'Currículos por área', hint: 'Full Stack · IA · Dados · Infraestrutura', run: () => navigate('sobre.html#cv') },
       { group: 'Ações', icon: 'Ct', label: 'Ver certificações', hint: 'sobre mim', run: () => navigate('sobre.html#cv') },
       { group: 'Ações', icon: '↑', label: 'Voltar ao topo', hint: '', run: () => scrollTo(0) }
     ];

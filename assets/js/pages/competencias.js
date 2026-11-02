@@ -3,7 +3,7 @@
   const { $, $$, reduce, wait, CONTACT } = window.DC;
 
   const CATS = {
-    ia: { name: 'Inteligência Artificial', short: 'IA', color: '#B48CFF', desc: 'GPT-5 e Claude Code no desenvolvimento diário, agentes de IA e automação de tarefas repetitivas.' },
+    ia: { name: 'Inteligência Artificial', short: 'IA', color: '#B48CFF', desc: 'Agentes de IA e LLMs por API (Anthropic), GPT-5 e Claude Code no desenvolvimento diário, MCP, reconhecimento de voz e automação de tarefas.' },
     dev: { name: 'Desenvolvimento Web e Mobile', short: 'Desenvolvimento', color: '#7CC4FF', desc: 'Web apps, websites pequenos, médios e grandes, aplicações mobile e programação full stack, do back-end ao front-end.' },
     dados: { name: 'Bases de Dados e Dados', short: 'Dados', color: '#43D68C', desc: 'Modelação em PostgreSQL e MySQL, análise de dados, APIs, web scraping e dashboards.' },
     ferr: { name: 'Ferramentas de Trabalho', short: 'Ferramentas', color: '#F06A5F', desc: 'Editores, IDEs e o pacote Office usados todos os dias, mais o GitHub para versionamento.' },
@@ -11,20 +11,20 @@
     conteudo: { name: 'Conteúdo e Redes Sociais', short: 'Conteúdo', color: '#8B9BB0', desc: 'Gestão e criação de conteúdo para redes sociais, identidade visual e gestão de projetos digitais.' }
   };
   const SKILLS = [
-    ['GPT-5', 'ia'], ['Claude Code', 'ia'], ['Agentes de IA', 'ia'], ['Automação de tarefas', 'ia'],
-    ['Python', 'dev'], ['Django', 'dev'], ['PHP', 'dev'], ['JavaScript', 'dev'], ['React.js', 'dev'], ['Angular', 'dev'], ['HTML5', 'dev'], ['CSS3', 'dev'], ['Design responsivo', 'dev'], ['SEO técnico', 'dev'], ['Aplicações mobile', 'dev'], ['Web apps', 'dev'], ['Programação full stack', 'dev'],
-    ['PostgreSQL', 'dados'], ['MySQL', 'dados'], ['Análise de dados', 'dados'], ['APIs REST', 'dados'], ['Postman', 'dados'], ['Web scraping', 'dados'], ['Power BI', 'dados'],
-    ['Visual Studio Code', 'ferr'], ['PyCharm', 'ferr'], ['Pacote Office', 'ferr'], ['GitHub', 'ferr'],
+    ['GPT-5', 'ia'], ['Claude Code', 'ia'], ['Agentes de IA', 'ia'], ['LLMs', 'ia'], ['API da Anthropic', 'ia'], ['MCP', 'ia'], ['Reconhecimento de voz', 'ia'], ['Automação de tarefas', 'ia'],
+    ['Python', 'dev'], ['Cloudflare Workers', 'dev'], ['Capacitor', 'dev'], ['Vite', 'dev'], ['Leaflet', 'dev'], ['Django', 'dev'], ['PHP', 'dev'], ['JavaScript', 'dev'], ['React.js', 'dev'], ['Angular', 'dev'], ['HTML5', 'dev'], ['CSS3', 'dev'], ['Design responsivo', 'dev'], ['SEO técnico', 'dev'], ['Aplicações mobile', 'dev'], ['Web apps', 'dev'], ['Programação full stack', 'dev'],
+    ['PostgreSQL', 'dados'], ['MySQL', 'dados'], ['Análise de dados', 'dados'], ['APIs REST', 'dados'], ['Postman', 'dados'], ['Web scraping', 'dados'], ['BeautifulSoup', 'dados'], ['Power BI', 'dados'], ['Power Query', 'dados'], ['D1 (SQLite)', 'dados'], ['JSON', 'dados'],
+    ['Visual Studio Code', 'ferr'], ['PyCharm', 'ferr'], ['Pacote Office', 'ferr'], ['GitHub', 'ferr'], ['GitHub Actions', 'ferr'],
     ['VMware ESXi', 'infra'], ['Windows', 'infra'], ['Linux', 'infra'], ['Suporte técnico', 'infra'], ['pfSense', 'infra'], ['Firewall', 'infra'], ['DNS', 'infra'], ['Troubleshooting de rede', 'infra'], ['Zabbix', 'infra'], ['Nagios', 'infra'],
     ['Gestão de redes sociais', 'conteudo'], ['Criação de conteúdo', 'conteudo'], ['Identidade visual', 'conteudo'], ['Gestão de projetos digitais', 'conteudo']
   ];
   const CTX = {
-    'Sistema': { sub: 'RPG para Android com servidor e painel · 2025–2026', uses: ['JavaScript', 'HTML5', 'CSS3', 'Aplicações mobile', 'Web apps', 'APIs REST', 'Programação full stack', 'Design responsivo', 'GitHub', 'Claude Code', 'Python'] },
-    'ANGA': { sub: 'Website da Aliança Nacional de Guildas Angolanas · 2025–2026', uses: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Design responsivo', 'Web apps', 'GitHub', 'Gestão de projetos digitais', 'Gestão de redes sociais'] },
-    'Balcão Analítico': { sub: 'Análise de negócio com agentes de IA', uses: ['Agentes de IA', 'JavaScript', 'HTML5', 'CSS3', 'Web apps', 'Análise de dados', 'Automação de tarefas', 'GitHub'] },
-    'Hortomar': { sub: 'Web scraping e integração de dados do mar de Angola', uses: ['Python', 'Web scraping', 'APIs REST', 'Análise de dados', 'Power BI', 'PyCharm', 'Automação de tarefas'] },
-    'ADANA': { sub: 'Assistente virtual por voz · 2021', uses: ['Python', 'PyCharm', 'APIs REST', 'Automação de tarefas'] },
-    'URBANDA': { sub: 'Sistema de Gestão de Denúncias Urbanas · 2024–2025', uses: ['Python', 'Django', 'PostgreSQL', 'APIs REST', 'Postman', 'HTML5', 'CSS3', 'JavaScript', 'Programação full stack'] },
+    'Sistema': { sub: 'RPG para Android com servidor e painel · 2025–2026', uses: ['JavaScript', 'HTML5', 'CSS3', 'Aplicações mobile', 'Web apps', 'APIs REST', 'Programação full stack', 'Design responsivo', 'GitHub', 'Claude Code', 'Python', 'Cloudflare Workers', 'D1 (SQLite)', 'Capacitor', 'GitHub Actions', 'JSON'] },
+    'ANGA': { sub: 'Website da Aliança Nacional de Guildas Angolanas · 2025–2026', uses: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Design responsivo', 'Web apps', 'GitHub', 'Gestão de projetos digitais', 'Gestão de redes sociais', 'Vite', 'JSON', 'GitHub Actions'] },
+    'Balcão Analítico': { sub: 'Análise de negócio com agentes de IA', uses: ['Agentes de IA', 'JavaScript', 'HTML5', 'CSS3', 'Web apps', 'Análise de dados', 'Automação de tarefas', 'GitHub', 'LLMs', 'API da Anthropic', 'Cloudflare Workers', 'JSON'] },
+    'Hortomar': { sub: 'Web scraping e integração de dados do mar de Angola', uses: ['Python', 'Web scraping', 'APIs REST', 'Análise de dados', 'Power BI', 'PyCharm', 'Automação de tarefas', 'BeautifulSoup', 'Power Query'] },
+    'ADANA': { sub: 'Assistente virtual por voz · 2021', uses: ['Python', 'PyCharm', 'APIs REST', 'Automação de tarefas', 'Reconhecimento de voz'] },
+    'URBANDA': { sub: 'Sistema de Gestão de Denúncias Urbanas · 2024–2025', uses: ['Python', 'Django', 'PostgreSQL', 'APIs REST', 'Postman', 'HTML5', 'CSS3', 'JavaScript', 'Programação full stack', 'Leaflet'] },
     'GEPGEO': { sub: 'Website institucional · 10 páginas', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo', 'SEO técnico'] },
     'C3-Geo': { sub: 'Website institucional · 6 páginas', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo'] },
     'Kudjima': { sub: 'Loja online · 4 páginas · 18 produtos', uses: ['HTML5', 'CSS3', 'JavaScript', 'Design responsivo', 'Web apps'] },
