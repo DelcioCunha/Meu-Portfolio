@@ -280,3 +280,5 @@ html.js [data-reveal]{will-change:transform,opacity}
 }
 
 .site-foot .foot-social{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+html{overflow-x:clip}

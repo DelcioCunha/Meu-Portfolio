@@ -1,5 +1,5 @@
 /* Service worker — o portfólio funciona offline depois da primeira visita */
-const CACHE = 'dc-portfolio-v24';
+const CACHE = 'dc-portfolio-v25';
 const ASSETS = [
  "./404.html",
  "./assets/css/base.css",
