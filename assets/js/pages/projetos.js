@@ -47,6 +47,7 @@
     en: { h: "Precision that shapes Angola's projects.", s: 'Surveying · Mapping · Engineering · Training', b: 'Request a quote', c1: 'Portfolio', c2: 'Courses' }
   };
   const setLang = l => {
+    if (!$('#mgH')) return;
     $$('.lang-sw button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
     const h = $('#mgH'); h.style.opacity = 0;
     setTimeout(() => { h.textContent = T[l].h; $('#mgS').textContent = T[l].s; $('#mgB').textContent = T[l].b; $('#mgC1').textContent = T[l].c1; $('#mgC2').textContent = T[l].c2; h.style.opacity = 1; }, 180);

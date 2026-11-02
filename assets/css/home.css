@@ -171,3 +171,14 @@ a.tile:hover .t-go{background:var(--signal);border-color:var(--signal);color:var
   .hero-cta{margin-top:16px}
   .globe-hint,.scroll-cue,.hero-kbd{display:none}
 }
+
+/* projetos: os nove cartões */
+.proj-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-block:14px;flex:1;align-content:center}
+.pc{position:relative;min-width:0;padding:11px 12px 12px;border-radius:12px;border:1px solid var(--line-2);background:var(--panel);display:grid;gap:3px;transition:transform .45s var(--ease) var(--d,0ms),border-color .3s,background .3s}
+.pc i{display:block;height:4px;width:28px;border-radius:2px;background:var(--signal);margin-bottom:6px}
+.pc-ok i{background:var(--ok)}.pc-amber i{background:var(--amber)}
+.pc b{font:700 15px/1.15 var(--f-display);letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc span{font:400 10.5px/1.3 var(--f-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-proj:hover .pc{transform:translateY(-4px);border-color:color-mix(in srgb,var(--signal) 45%,var(--line-2))}
+@media (max-width:420px){.proj-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.pc:last-child{grid-column:1/-1}}
+@media (prefers-reduced-motion:reduce){.pc{transition:none}}
