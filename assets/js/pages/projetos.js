@@ -220,5 +220,5 @@
   // abrir diretamente por endereço: projetos.html#urbanda
   const h = location.hash.replace('#', '');
   if (h === 'redes') window.DC.ready(() => setTimeout(() => { const t = $('#redes'); if (!t) return; window.DC.lenis ? window.DC.lenis.scrollTo(t, { offset: -80, immediate: true }) : t.scrollIntoView(); }, 700));
-  if (['sistema', 'anga', 'hortomar', 'adana', 'gepgeo', 'c3', 'urbanda', 'kudjima'].includes(h)) window.DC.ready(() => setTimeout(() => { const b = $(`[data-case="${h}"]`); b && b.click(); }, 600));
+  if (['sistema', 'anga', 'hortomar', 'balcao', 'adana', 'gepgeo', 'c3', 'urbanda', 'kudjima'].includes(h)) window.DC.ready(() => setTimeout(() => { const b = $(`[data-case="${h}"]`); b && b.click(); }, 600));
 })();
