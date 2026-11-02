@@ -26,7 +26,7 @@
     { href: 'projetos.html', key: 'projetos', name: 'Projetos', hint: 'estudos de caso' },
     { href: 'contacto.html', key: 'contacto', name: 'Contacto', hint: 'falar comigo' }
   ];
-  const CONTACT = { email: 'delciobentocunha007@gmail.com', phone: '+244947976103', phoneLabel: '+244 947 976 103', wa: 'https://wa.me/244947976103', cv: 'assets/docs/CV-Delcio-Cunha.pdf', linkedin: 'https://www.linkedin.com/in/delcio-cunha-b9760a3ba', github: 'https://github.com/DelcioCunha', instagram: 'https://www.instagram.com/delcio_369/', facebook: 'https://www.facebook.com/delcio.cunha.2025/', x: 'https://x.com/DelcioCunha369' };
+  const CONTACT = { email: 'delciobentocunha007@gmail.com', phone: '+244947976103', phoneLabel: '+244 947 976 103', wa: 'https://wa.me/244947976103', cv: 'assets/docs/CV-Delcio-Cunha.pdf', linkedin: 'https://www.linkedin.com/in/delcio-cunha-b9760a3ba', github: 'https://github.com/DelcioCunha', emailjs: { publicKey: 'E2aymhtJCXXWLosP1', serviceId: 'service_vm9530k', templateId: 'template_xsywuum' }, instagram: 'https://www.instagram.com/delcio_369/', facebook: 'https://www.facebook.com/delcio.cunha.2025/', x: 'https://x.com/DelcioCunha369' };
 
   /* ---------- API pública ---------- */
   const readyQ = [];

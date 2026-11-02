@@ -52,7 +52,7 @@
   tz(); setInterval(tz, 60000);
 
   /* ---------- compositor ---------- */
-  const f = $('#cform'), nm = $('#fName'), org = $('#fOrg'), msg = $('#fMsg'), cnt = $('#count');
+  const f = $('#cform'), em = $('#fEmail'), nm = $('#fName'), org = $('#fOrg'), msg = $('#fMsg'), cnt = $('#count');
   const pvText = $('#pvText'), pvTime = $('#pvTime'), pvBody = $('#pvBody'), pvSubj = $('#pvSubj'), bubble = $('#bubble');
   const types = () => $$('#types input:checked').map(i => i.value);
   function compose() {
@@ -75,23 +75,54 @@
   }
   [nm, org, msg].forEach(el => el.addEventListener('input', () => { el.removeAttribute('aria-invalid'); update(); }));
   nm.addEventListener('input', () => $('#eName').hidden = true);
+  em.addEventListener('input', () => { em.removeAttribute('aria-invalid'); $('#eEmail').hidden = true; });
   msg.addEventListener('input', () => $('#eMsg').hidden = true);
   $$('#types input').forEach(i => i.addEventListener('change', update));
   update();
 
-  function valid() {
-    let ok = true;
+  const emailOk = () => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim());
+  function valid(needEmail) {
+    let ok = true, first = null;
+    if (needEmail && !emailOk()) { em.setAttribute('aria-invalid', 'true'); $('#eEmail').hidden = false; ok = false; first = em; }
     if (!nm.value.trim()) { nm.setAttribute('aria-invalid', 'true'); $('#eName').hidden = false; ok = false; }
     if (msg.value.trim().length < 10) { msg.setAttribute('aria-invalid', 'true'); $('#eMsg').hidden = false; ok = false; }
-    if (!ok) { (nm.value.trim() ? msg : nm).focus(); toast('Falta preencher um campo.'); }
+    if (!ok) { (!nm.value.trim() ? nm : first || msg).focus(); toast('Falta preencher um campo.'); }
     return ok;
   }
   let via = 'wa';
   $$('.send [data-via]').forEach(b => b.addEventListener('click', () => via = b.dataset.via));
+  const note = $('#sendNote');
+  const ejs = CONTACT.emailjs || {};
+  const ejsReady = !!(ejs.publicKey && ejs.serviceId && ejs.templateId);
+  async function sendEmail(txt, btn) {
+    btn.setAttribute('aria-busy', 'true'); const label = btn.lastChild.textContent; btn.lastChild.textContent = ' A enviar…';
+    note.className = 'send-note';
+    try {
+      const r = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ service_id: ejs.serviceId, template_id: ejs.templateId, user_id: ejs.publicKey, template_params: {
+          subject: subject(), from_name: nm.value.trim(), from_email: em.value.trim(), reply_to: em.value.trim(),
+          organization: org.value.trim() || '—', project_types: types().join(', ') || '—', message: msg.value.trim(), full_message: txt, page: location.href
+        } })
+      });
+      if (!r.ok) throw new Error(await r.text());
+      note.textContent = `Mensagem enviada. Obrigado, ${nm.value.trim().split(' ')[0]}! Respondo para ${em.value.trim()} assim que puder.`;
+      note.className = 'send-note ok';
+      toast('Mensagem enviada com sucesso.');
+      f.reset(); $$('#types input').forEach(i => i.checked = false); update();
+    } catch (err) {
+      console.warn('EmailJS:', err);
+      note.innerHTML = `Não foi possível enviar agora. Tente o WhatsApp ou escreva para <a href="mailto:${CONTACT.email}">${CONTACT.email}</a>.`;
+      note.className = 'send-note bad';
+      toast('Falha no envio do email.');
+    } finally { btn.removeAttribute('aria-busy'); btn.lastChild.textContent = label; }
+  }
   f.addEventListener('submit', e => {
     e.preventDefault();
-    if (!valid()) return;
+    if ($('#fSite').value) return; // armadilha para robôs
+    if (!valid(via === 'mail' && ejsReady)) return;
     const txt = compose();
+    if (via === 'mail' && ejsReady) { sendEmail(txt, e.submitter || $('.send [data-via="mail"]')); return; }
     if (via === 'wa') {
       window.open(`${CONTACT.wa}?text=${encodeURIComponent(txt)}`, '_blank', 'noopener');
       toast('A abrir o WhatsApp com a mensagem pronta.');

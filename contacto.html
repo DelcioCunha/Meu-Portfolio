@@ -81,6 +81,12 @@
           <p class="err" id="eName" hidden>Escreva o seu nome para eu saber com quem falo.</p>
         </div>
         <div class="field">
+          <label for="fEmail">O seu email</label>
+          <input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Ex.: ana.silva@empresa.co.ao">
+          <p class="err" id="eEmail" hidden>Escreva um email válido para eu lhe poder responder.</p>
+        </div>
+        <div class="field hp" aria-hidden="true"><label for="fSite">Não preencha</label><input id="fSite" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="field">
           <label for="fOrg">Empresa ou organização <span class="opt">opcional</span></label>
           <input id="fOrg" name="org" type="text" autocomplete="organization" placeholder="Ex.: GEPGEO Consultoria">
         </div>
@@ -110,7 +116,7 @@
             Enviar por email</button>
           <button class="btn btn-ghost btn-sm" type="button" id="copyMsg">Copiar texto</button>
         </div>
-        <p class="send-note">Abre a sua aplicação de WhatsApp ou de email com a mensagem já escrita. Nada é enviado sem a sua confirmação.</p>
+        <p class="send-note" id="sendNote">O email é enviado diretamente daqui e chega-me na hora. O WhatsApp abre a aplicação com a mensagem já escrita.</p>
       </form>
 
       <aside class="preview" data-reveal aria-label="Pré-visualização da mensagem">
